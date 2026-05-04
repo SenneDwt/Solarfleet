@@ -100,7 +100,7 @@ export default function FAQPage() {
         <div className="mx-auto max-w-3xl px-4">
           <h2 className="text-3xl font-extrabold text-[var(--fg)] mb-4">Ready to Stop Answering Questions and Start Eliminating Failures?</h2>
           <p className="text-[var(--fg-muted)] mb-8">
-            Book a 30-minute demo. We&apos;ll show you the panel, the dashboard, and the numbers — with no commitment required.
+            Book a 30-minute demo. We&apos;ll show you the panel, the dashboard, and the numbers, with no commitment required.
           </p>
           <Link href="/contact"><Button size="lg">Book a Free Demo</Button></Link>
         </div>

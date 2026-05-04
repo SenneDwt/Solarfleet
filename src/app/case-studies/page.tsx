@@ -7,7 +7,7 @@ import RevealSection from '@/components/ui/RevealSection';
 import { CASE_STUDIES } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Case Studies — VoltKeep Fleet Results',
+  title: 'Case Studies: VoltKeep Fleet Results',
   description: 'Real-world results from fleet operators who eliminated battery failures with VoltKeep solar charging panels.',
 };
 

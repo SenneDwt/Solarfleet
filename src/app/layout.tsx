@@ -13,7 +13,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'VoltKeep — Solar Fleet Battery Maintenance',
+    default: 'VoltKeep: Solar Fleet Battery Maintenance',
     template: '%s | VoltKeep',
   },
   description:
@@ -36,13 +36,13 @@ export const metadata: Metadata = {
     locale: 'en_EU',
     url: 'https://voltkeep.eu',
     siteName: 'VoltKeep',
-    title: 'VoltKeep — Your Fleet Never Fails',
+    title: 'VoltKeep: Your Fleet Never Fails',
     description:
       'Solar-powered auxiliary battery maintenance for commercial fleets. Eliminate dead batteries, reduce maintenance costs, and get real-time health monitoring for every vehicle.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'VoltKeep — Solar Fleet Battery Maintenance',
+    title: 'VoltKeep: Solar Fleet Battery Maintenance',
     description: 'Eliminate dead fleet batteries. Permanently.',
   },
   robots: {
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} h-full`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} h-full`}>
       <body className="min-h-full flex flex-col antialiased">
         <ThemeProvider>
           <Navbar />

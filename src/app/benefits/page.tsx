@@ -20,7 +20,7 @@ export default function BenefitsPage() {
             What a Dead Battery Actually Costs You.
           </h1>
           <p className="text-[var(--fg-muted)] text-lg max-w-2xl mx-auto">
-            Most fleet managers underestimate this number. Once you add up replacements, call-outs, driver time, and missed deliveries — the real cost per incident is significant.
+            Most fleet managers underestimate this number. Once you add up replacements, call-outs, driver time, and missed deliveries, the real cost per incident is significant.
           </p>
         </div>
       </section>
@@ -56,7 +56,7 @@ export default function BenefitsPage() {
               <div className="text-xs font-semibold tracking-widest uppercase text-[var(--amber-text)] mb-3">Total cost per incident</div>
               <div className="text-5xl font-extrabold text-[var(--fg)] stat-value mb-2">€400–1,640</div>
               <p className="text-sm text-[var(--fg-muted)]">
-                The average fleet sees 0.8 dead battery incidents per vehicle per year. For a 50-vehicle fleet, that is 40 incidents annually — a cost of <strong className="text-[var(--fg)]">€16,000–65,000</strong> that VoltKeep eliminates.
+                The average fleet sees 0.8 dead battery incidents per vehicle per year. For a 50-vehicle fleet, that is 40 incidents annually, a cost of <strong className="text-[var(--fg)]">€16,000–65,000</strong> that VoltKeep eliminates.
               </p>
             </Card>
           </div>
@@ -83,7 +83,7 @@ export default function BenefitsPage() {
                     'Battery slowly discharges during extended parking',
                     'Driver arrives to a vehicle that will not start',
                     'Call-out or roadside recovery is dispatched',
-                    'Battery replaced — often ahead of its natural end of life',
+                    'Battery replaced, often ahead of its natural end of life',
                     'Deliveries missed, appointments rescheduled',
                     'This repeats 0.8 times per vehicle per year on average',
                     'No advance warning before failure occurs',
@@ -135,7 +135,7 @@ export default function BenefitsPage() {
               <Badge variant="muted" className="mb-4">By Fleet Size</Badge>
               <h2 className="text-3xl font-bold text-[var(--fg)]">What VoltKeep is Worth to Your Operation</h2>
               <p className="text-[var(--fg-muted)] mt-3 max-w-xl mx-auto">
-                These figures are based on 0.8 incidents per vehicle per year at an average cost of €700 per incident — conservative industry figures.
+                These figures are based on 0.8 incidents per vehicle per year at an average cost of €700 per incident, conservative industry figures.
               </p>
             </div>
             <div className="overflow-x-auto">
@@ -183,7 +183,7 @@ export default function BenefitsPage() {
                 <Badge variant="amber" className="mb-4">Battery Lifespan</Badge>
                 <h2 className="text-3xl font-bold text-[var(--fg)] mb-5">Replace Batteries Every 5 Years, Not Every 18 Months</h2>
                 <p className="text-[var(--fg-muted)] leading-relaxed mb-6">
-                  The primary cause of premature battery failure is deep discharge. When a battery drops below 50% state of charge repeatedly, the lead plates sulphate and capacity degrades rapidly. Most fleet batteries that are replaced early are technically fine — they simply were not maintained above their safe operating threshold.
+                  The primary cause of premature battery failure is deep discharge. When a battery drops below 50% state of charge repeatedly, the lead plates sulphate and capacity degrades rapidly. Most fleet batteries that are replaced early are technically fine, they simply were not maintained above their safe operating threshold.
                 </p>
                 <p className="text-[var(--fg-muted)] leading-relaxed mb-6">
                   VoltKeep keeps state of charge above 80% at all times. Batteries maintained in this range typically last 4–6 years instead of 12–18 months. For a 100-vehicle fleet replacing 80 batteries a year at €150 each, that alone is a saving of €60,000 per year before call-outs and downtime are considered.
@@ -204,7 +204,7 @@ export default function BenefitsPage() {
                 <div className="space-y-4">
                   <div>
                     <div className="flex justify-between text-xs text-[var(--fg-muted)] mb-1">
-                      <span>Without VoltKeep — 2 weeks parked</span>
+                      <span>Without VoltKeep, 2 weeks parked</span>
                       <span className="text-red-500 font-semibold">38%</span>
                     </div>
                     <div className="battery-bar-track">
@@ -214,7 +214,7 @@ export default function BenefitsPage() {
                   </div>
                   <div>
                     <div className="flex justify-between text-xs text-[var(--fg-muted)] mb-1">
-                      <span>Without VoltKeep — 3 days parked</span>
+                      <span>Without VoltKeep, 3 days parked</span>
                       <span className="text-[var(--amber-text)] font-semibold">71%</span>
                     </div>
                     <div className="battery-bar-track">
@@ -224,7 +224,7 @@ export default function BenefitsPage() {
                   </div>
                   <div>
                     <div className="flex justify-between text-xs text-[var(--fg-muted)] mb-1">
-                      <span>With VoltKeep — 2 weeks parked</span>
+                      <span>With VoltKeep, 2 weeks parked</span>
                       <span className="text-green-600 font-semibold">96%</span>
                     </div>
                     <div className="battery-bar-track">
@@ -234,7 +234,7 @@ export default function BenefitsPage() {
                   </div>
                   <div>
                     <div className="flex justify-between text-xs text-[var(--fg-muted)] mb-1">
-                      <span>With VoltKeep — 1 month parked</span>
+                      <span>With VoltKeep, 1 month parked</span>
                       <span className="text-green-600 font-semibold">94%</span>
                     </div>
                     <div className="battery-bar-track">
@@ -290,7 +290,7 @@ export default function BenefitsPage() {
         <div className="mx-auto max-w-3xl px-4">
           <h2 className="text-3xl font-extrabold text-[var(--fg)] mb-4">Want the Numbers for Your Specific Fleet?</h2>
           <p className="text-[var(--fg-muted)] mb-8">
-            Our Customer Success team will model your actual battery failure costs and show you what VoltKeep is worth to your operation — free, no obligation.
+            Our Customer Success team will model your actual battery failure costs and show you what VoltKeep is worth to your operation, free, no obligation.
           </p>
           <Link href="/contact"><Button size="lg">Request a Custom Analysis</Button></Link>
         </div>

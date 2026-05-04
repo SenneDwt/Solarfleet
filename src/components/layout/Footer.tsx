@@ -9,8 +9,6 @@ const links = {
   ],
   Company: [
     { label: 'About Us', href: '/about' },
-    { label: 'Case Studies', href: '/case-studies' },
-    { label: 'Benefits & ROI', href: '/benefits' },
     { label: 'FAQ', href: '/faq' },
   ],
   Resources: [

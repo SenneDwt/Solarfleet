@@ -6,7 +6,7 @@ import Badge from '@/components/ui/Badge';
 import RevealSection from '@/components/ui/RevealSection';
 
 export const metadata: Metadata = {
-  title: 'Product — VoltKeep VS-120 Solar Panel',
+  title: 'Product: VoltKeep VS-120 Solar Panel',
   description: 'Technical specifications, retrofit process, and vehicle compatibility for the VoltKeep VS-120 fleet solar charging panel.',
 };
 
@@ -71,7 +71,7 @@ export default function ProductPage() {
             Engineered for Fleets.<br />Not Adapted from Residential Solar.
           </h1>
           <p className="text-[var(--fg-muted)] text-lg max-w-2xl mb-8 leading-relaxed">
-            The VS-120 is the only solar panel designed from the ground up for commercial vehicle deployment — aerodynamic, ruggedised, intelligent, and connected. Every millimetre counts when it lives on your fleet.
+            The VS-120 is the only solar panel designed from the ground up for commercial vehicle deployment, aerodynamic, ruggedised, intelligent, and connected. Every millimetre counts when it lives on your fleet.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href="/contact"><Button size="lg">Request a Pilot Install</Button></Link>

@@ -7,8 +7,8 @@ import RevealSection from '@/components/ui/RevealSection';
 import SolarCharger from '@/components/animations/SolarCharger';
 
 export const metadata: Metadata = {
-  title: 'How It Works — VoltKeep',
-  description: 'How VoltKeep keeps fleet vehicle 12V batteries from going flat while parked — the physics, the hardware, and the monitoring explained clearly.',
+  title: 'How It Works: VoltKeep',
+  description: 'How VoltKeep keeps fleet vehicle 12V batteries from going flat while parked, the physics, the hardware, and the monitoring explained clearly.',
 };
 
 const STEPS = [
@@ -16,21 +16,21 @@ const STEPS = [
     n: '01',
     title: 'The vehicle is parked',
     subtitle: 'This is when the problem starts',
-    body: 'When a fleet vehicle sits with the engine off — overnight, over a weekend, or for an extended period in a depot or airport lot — its 12V auxiliary battery slowly self-discharges. Modern vehicles also have permanent parasitic loads: alarm systems, central locking, telematics units, and ECUs that draw current continuously even with the ignition off. In cold weather, self-discharge accelerates further. After one to two weeks without the engine running, many batteries drop below the voltage required to start the vehicle.',
+    body: 'When a fleet vehicle sits with the engine off, overnight, over a weekend, or for an extended period in a depot or airport lot, its 12V auxiliary battery slowly self-discharges. Modern vehicles also have permanent parasitic loads: alarm systems, central locking, telematics units, and ECUs that draw current continuously even with the ignition off. In cold weather, self-discharge accelerates further. After one to two weeks without the engine running, many batteries drop below the voltage required to start the vehicle.',
     fact: 'The average 12V lead-acid battery loses 5–10% of its charge per month at room temperature. In winter, this doubles.',
   },
   {
     n: '02',
     title: 'The solar panel generates a trickle',
-    subtitle: 'Daylight — not direct sunlight — is enough',
+    subtitle: 'Daylight, not direct sunlight, is enough',
     body: 'The VoltKeep VS-120 panel converts daylight into a small, steady direct current. At peak output it produces 120W. In practice, under the diffuse overcast conditions typical of northern European winters, it generates 8–30W during daylight hours. That is far more than the 0.5–1W of power needed to offset a parked vehicle\'s parasitic drain. The panel does not need to produce a large amount of power. It needs to produce more than the battery is losing. It always does.',
     fact: 'A typical van\'s standby drain is 20–80mA. At 12V, that is 0.24–1W. The panel generates 8–30W in overcast conditions.',
   },
   {
     n: '03',
     title: 'The MPPT controller maintains the battery',
-    subtitle: 'Smart charging — not simple on/off',
-    body: 'Raw solar output fluctuates with cloud cover, temperature, and the angle of the sun. The MPPT (Maximum Power Point Tracking) controller samples the panel\'s output 1,000 times per second and adjusts the operating point to extract the maximum available power at each moment. It then delivers that power to the battery in precisely the right form: a bulk charge if the battery is depleted, an absorption charge at full voltage to complete the cycle, or a float charge to hold the battery at 100% without overcharging it. The result is a battery that is perpetually maintained — never overcharged, never discharged.',
+    subtitle: 'Smart charging, not simple on/off',
+    body: 'Raw solar output fluctuates with cloud cover, temperature, and the angle of the sun. The MPPT (Maximum Power Point Tracking) controller samples the panel\'s output 1,000 times per second and adjusts the operating point to extract the maximum available power at each moment. It then delivers that power to the battery in precisely the right form: a bulk charge if the battery is depleted, an absorption charge at full voltage to complete the cycle, or a float charge to hold the battery at 100% without overcharging it. The result is a battery that is perpetually maintained, never overcharged, never discharged.',
     fact: 'MPPT controllers extract 15–30% more energy from a panel than simpler alternatives. In low-light winter conditions, this difference is critical.',
   },
   {
@@ -44,7 +44,7 @@ const STEPS = [
     n: '05',
     title: 'The dashboard tells you before anything goes wrong',
     subtitle: 'Know the status of every battery before your drivers do',
-    body: 'Every 5 minutes, the VoltKeep unit transmits the battery\'s current voltage, state of charge, and the panel\'s output wattage to your fleet dashboard. You can see the real-time health of every vehicle in one view. If a battery trends downward — indicating a faulty accessory drawing too much current, or a panel that needs cleaning — you receive an alert before the battery fails. A planned replacement during a scheduled service costs a fraction of an emergency call-out.',
+    body: 'Every 5 minutes, the VoltKeep unit transmits the battery\'s current voltage, state of charge, and the panel\'s output wattage to your fleet dashboard. You can see the real-time health of every vehicle in one view. If a battery trends downward, indicating a faulty accessory drawing too much current, or a panel that needs cleaning, you receive an alert before the battery fails. A planned replacement during a scheduled service costs a fraction of an emergency call-out.',
     fact: '94% of VoltKeep customers say the dashboard replaced their manual morning battery check entirely.',
   },
 ];
@@ -120,10 +120,10 @@ export default function HowItWorksPage() {
                   Designed for Belgian winters. Not Californian summers.
                 </h2>
                 <p className="text-[var(--fg-muted)] leading-relaxed mb-6">
-                  Most solar products are specified at Standard Test Conditions — full overhead sun at 25°C. VoltKeep is sized specifically for northern European conditions, where winter days are short and overcast. Even in December in Antwerp, the panel generates enough power to maintain the battery.
+                  Most solar products are specified at Standard Test Conditions, full overhead sun at 25°C. VoltKeep is sized specifically for northern European conditions, where winter days are short and overcast. Even in December in Antwerp, the panel generates enough power to maintain the battery.
                 </p>
                 <p className="text-[var(--fg-muted)] leading-relaxed mb-6">
-                  The VS-120 panel produces meaningful power from diffuse daylight, not direct sunlight. Overcast conditions reduce output to 15–30% of rated capacity — which is still several times more than the battery loses through self-discharge each day.
+                  The VS-120 panel produces meaningful power from diffuse daylight, not direct sunlight. Overcast conditions reduce output to 15–30% of rated capacity, which is still several times more than the battery loses through self-discharge each day.
                 </p>
                 <div className="space-y-3">
                   {[
@@ -149,7 +149,7 @@ export default function HowItWorksPage() {
                 </div>
               </div>
               <Card className="p-7">
-                <h3 className="font-bold text-[var(--fg)] mb-5 text-center">Monthly Solar Availability — Antwerp</h3>
+                <h3 className="font-bold text-[var(--fg)] mb-5 text-center">Monthly Solar Availability, Antwerp</h3>
                 <div className="space-y-3">
                   {[
                     { month: 'Jan', pct: 18, note: 'Low, but sufficient' },

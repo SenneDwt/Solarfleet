@@ -7,7 +7,7 @@ import RevealSection from '@/components/ui/RevealSection';
 import { TEAM } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'About VoltKeep — Our Story & Mission',
+  title: 'About VoltKeep: Our Story & Mission',
   description: 'VoltKeep was founded by a fleet manager and a solar engineer to permanently solve the dead battery problem in commercial fleets.',
 };
 
@@ -21,10 +21,10 @@ const MILESTONES = [
 ];
 
 const VALUES = [
-  { icon: '🔬', title: 'Engineered, not improvised', desc: 'The VS-120 was designed from scratch for commercial fleet conditions — not adapted from a garden shed solar kit. Physics-first thinking in everything we build.' },
+  { icon: '🔬', title: 'Engineered, not improvised', desc: 'The VS-120 was designed from scratch for commercial fleet conditions, not adapted from a garden shed solar kit. Physics-first thinking in everything we build.' },
   { icon: '📊', title: 'Data over assumptions', desc: 'Every recommendation we make is backed by fleet performance data from thousands of vehicles. If we can\'t show you the numbers, we don\'t say it.' },
   { icon: '🤝', title: 'Outcomes over installations', desc: 'We don\'t count panels sold. We count dead batteries prevented. Customer success is measured in operational metrics, not contract signatures.' },
-  { icon: '🌿', title: 'Sustainability is structural', desc: 'Reducing fuel burn and battery waste isn\'t a marketing story — it\'s built into the product. We track and report our environmental impact quarterly.' },
+  { icon: '🌿', title: 'Sustainability is structural', desc: 'Reducing fuel burn and battery waste isn\'t a marketing story, it\'s built into the product. We track and report our environmental impact quarterly.' },
 ];
 
 export default function AboutPage() {
@@ -44,7 +44,7 @@ export default function AboutPage() {
               VoltKeep didn&apos;t begin in a Silicon Valley garage or a university lab. It started in an Antwerp depot on a −12°C January morning, when the third van of the day refused to start.
             </p>
             <p className="text-[var(--fg-muted)] text-lg leading-relaxed">
-              Matthias Brenner, then Head of Fleet Operations at a 500-van logistics company, called his friend Dr. Sarah Okafor — a solar engineer at Tesla Energy. &ldquo;There has to be a permanent solution to this,&rdquo; he said. Three years later, there is. And it&apos;s protecting over 10,000 vehicles across Europe.
+              Matthias Brenner, then Head of Fleet Operations at a 500-van logistics company, called his friend Dr. Sarah Okafor, a solar engineer at Tesla Energy. &ldquo;There has to be a permanent solution to this,&rdquo; he said. Three years later, there is. And it&apos;s protecting over 10,000 vehicles across Europe.
             </p>
           </div>
         </div>
@@ -59,10 +59,10 @@ export default function AboutPage() {
                 <Badge variant="muted" className="mb-4">Why We Exist</Badge>
                 <h2 className="text-3xl font-bold text-[var(--fg)] mb-6">The Problem Nobody Was Solving</h2>
                 <div className="space-y-4 text-[var(--fg-muted)] leading-relaxed">
-                  <p>Commercial fleet vehicles are modern engineering marvels — sophisticated engine management, telematics, advanced driver assistance. But every single one of them carries a critical single point of failure: a 12V lead-acid auxiliary battery that nobody talks about until it kills a vehicle on a Monday morning.</p>
+                  <p>Commercial fleet vehicles are modern engineering marvels, sophisticated engine management, telematics, advanced driver assistance. But every single one of them carries a critical single point of failure: a 12V lead-acid auxiliary battery that nobody talks about until it kills a vehicle on a Monday morning.</p>
                   <p>Matthias knew this problem intimately. In 15 years of fleet management, he&apos;d seen every version of it. Jump-start contractors on speed dial. Spare batteries stockpiled in depots. Drivers dispatched with portable boosters. All of it was treatment, not prevention.</p>
                   <p>When he connected with Sarah, she immediately identified the solution: solar trickle charging. The physics were straightforward. The engineering challenge was making it robust enough for a commercial vehicle operating in all conditions, with enough intelligence to monitor and report, and simple enough to retrofit at scale without disrupting fleet operations.</p>
-                  <p>Two years of prototyping, testing through two winters, and a 30-vehicle pilot later — VoltKeep was ready. Not a single vehicle in the pilot suffered a battery failure. Not one.</p>
+                  <p>Two years of prototyping, testing through two winters, and a 30-vehicle pilot later, VoltKeep was ready. Not a single vehicle in the pilot suffered a battery failure. Not one.</p>
                 </div>
               </div>
               <div>
@@ -91,7 +91,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
             <Badge variant="amber" className="mb-6">Mission</Badge>
             <blockquote className="text-2xl sm:text-3xl font-bold text-[var(--fg)] leading-relaxed mb-8">
-              &ldquo;Make the dead battery a historical artefact of fleet management — something future fleet managers read about in old trade magazines.&rdquo;
+              &ldquo;Make the dead battery a historical artefact of fleet management, something future fleet managers read about in old trade magazines.&rdquo;
             </blockquote>
             <p className="text-[var(--fg-muted)] text-lg max-w-3xl mx-auto">
               That&apos;s not a marketing line. It&apos;s the goal we measure ourselves against every quarter. We track total battery failures across our entire monitored fleet. The number is zero. It has been zero for over 18 months.
@@ -108,7 +108,7 @@ export default function AboutPage() {
               <Badge variant="muted" className="mb-4">The Team</Badge>
               <h2 className="text-3xl font-bold text-[var(--fg)]">People Who&apos;ve Lived the Problem</h2>
               <p className="text-[var(--fg-muted)] mt-4 max-w-xl mx-auto">
-                Our core team combines decades of fleet operations experience with deep solar engineering expertise. We don&apos;t theorise about your problems — we&apos;ve had them.
+                Our core team combines decades of fleet operations experience with deep solar engineering expertise. We don&apos;t theorise about your problems, we&apos;ve had them.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -157,7 +157,7 @@ export default function AboutPage() {
                 <Badge variant="green" className="mb-4">Sustainability</Badge>
                 <h2 className="text-3xl font-bold text-[var(--fg)] mb-6">We Count Every Tonne</h2>
                 <p className="text-[var(--fg-muted)] leading-relaxed mb-6">
-                  By reducing alternator load across our monitored fleet, VoltKeep prevents measurable diesel consumption — which we track and report quarterly. We also reduce battery manufacturing demand and landfill, as each battery we extend lasts 3–5 years longer.
+                  By reducing alternator load across our monitored fleet, VoltKeep prevents measurable diesel consumption, which we track and report quarterly. We also reduce battery manufacturing demand and landfill, as each battery we extend lasts 3–5 years longer.
                 </p>
                 <div className="space-y-4">
                   {[

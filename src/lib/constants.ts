@@ -1,20 +1,10 @@
 import type { Vehicle, CaseStudy, FAQItem, TeamMember, PricingPlan, NavLink, Feature } from '@/types';
 
 export const NAV_LINKS: NavLink[] = [
-  { label: 'Product', href: '/product' },
+  { label: 'Home', href: '/' },
   { label: 'How It Works', href: '/how-it-works' },
-  { label: 'Benefits', href: '/benefits' },
   { label: 'Dashboard', href: '/dashboard' },
-  { label: 'Case Studies', href: '/case-studies' },
   { label: 'Pricing', href: '/pricing' },
-  { label: 'About', href: '/about' },
-];
-
-export const STATS = [
-  { value: '10,847', label: 'Vehicles Protected', suffix: '+' },
-  { value: '0', label: 'Dead Batteries Since Launch', suffix: '' },
-  { value: '3–5×', label: 'Longer Battery Lifespan', suffix: '' },
-  { value: '€0', label: 'Emergency Call-Out Costs', suffix: '' },
 ];
 
 export const FEATURES: Feature[] = [
@@ -26,7 +16,7 @@ export const FEATURES: Feature[] = [
   {
     iconName: 'shield-check',
     title: 'Always Ready to Start',
-    description: 'Whether the vehicle sat for a weekend, a week, or a month — VoltKeep ensures the battery is at full strength when the driver turns the key.',
+    description: 'Whether the vehicle sat for a weekend, a week, or a month, VoltKeep ensures the battery is at full strength when the driver turns the key.',
   },
   {
     iconName: 'trending-up',
@@ -51,31 +41,31 @@ export const FEATURES: Feature[] = [
   {
     iconName: 'bell',
     title: 'Alerts Before It Becomes a Problem',
-    description: 'Set custom voltage thresholds. If a battery trends downward — due to a parasitic drain or panel fault — you get an alert before the vehicle fails to start.',
+    description: 'Set custom voltage thresholds. If a battery trends downward, due to a parasitic drain or panel fault, you get an alert before the vehicle fails to start.',
   },
   {
     iconName: 'clock',
     title: 'Depots, Airports, Long-Stay Lots',
-    description: 'VoltKeep was built specifically for vehicles that sit. Overnight, over weekends, over extended parking periods — the panel works whenever daylight reaches it.',
+    description: 'VoltKeep was built specifically for vehicles that sit. Overnight, over weekends, over extended parking periods, the panel works whenever daylight reaches it.',
   },
 ];
 
 export const VEHICLES: Vehicle[] = [
-  { id: 'VAN-001', name: 'Transit Alpha', model: 'Ford Transit 2.0', batteryVoltage: 12.71, batteryHealth: 98, panelStatus: 'active', solarInput: 87, status: 'good', location: 'Depot A — Antwerp', daysProtected: 284, trend: 'stable' },
-  { id: 'VAN-002', name: 'Transit Beta', model: 'Ford Transit 2.0', batteryVoltage: 12.68, batteryHealth: 95, panelStatus: 'active', solarInput: 79, status: 'good', location: 'Depot A — Antwerp', daysProtected: 241, trend: 'stable' },
-  { id: 'VAN-003', name: 'Sprinter-01', model: 'Mercedes Sprinter 314', batteryVoltage: 12.61, batteryHealth: 92, panelStatus: 'active', solarInput: 72, status: 'good', location: 'Depot B — Ghent', daysProtected: 198, trend: 'stable' },
-  { id: 'VAN-004', name: 'Sprinter-02', model: 'Mercedes Sprinter 314', batteryVoltage: 12.55, batteryHealth: 89, panelStatus: 'standby', solarInput: 12, status: 'good', location: 'Depot B — Ghent', daysProtected: 176, trend: 'stable' },
-  { id: 'TRK-001', name: 'Crafter Heavy', model: 'VW Crafter 35', batteryVoltage: 12.41, batteryHealth: 76, panelStatus: 'active', solarInput: 61, status: 'good', location: 'Long-Stay Lot — Brussels', daysProtected: 312, trend: 'stable' },
-  { id: 'VAN-005', name: 'Vivaro North', model: 'Vauxhall Vivaro', batteryVoltage: 12.18, batteryHealth: 58, panelStatus: 'active', solarInput: 44, status: 'warning', location: 'Long-Stay Lot — Bruges', daysProtected: 89, trend: 'declining' },
-  { id: 'TRK-002', name: 'Daily Express', model: 'Iveco Daily 35S', batteryVoltage: 12.74, batteryHealth: 94, panelStatus: 'active', solarInput: 88, status: 'good', location: 'Depot A — Antwerp', daysProtected: 156, trend: 'improving' },
-  { id: 'VAN-006', name: 'Transit Gamma', model: 'Ford Transit 2.0', batteryVoltage: 12.52, batteryHealth: 87, panelStatus: 'active', solarInput: 66, status: 'good', location: 'Depot C — Charleroi', daysProtected: 221, trend: 'stable' },
-  { id: 'VAN-007', name: 'Transit Delta', model: 'Ford Transit Custom', batteryVoltage: 12.59, batteryHealth: 91, panelStatus: 'active', solarInput: 75, status: 'good', location: 'Depot C — Charleroi', daysProtected: 133, trend: 'stable' },
-  { id: 'TRK-003', name: 'Boxer Cargo', model: 'Peugeot Boxer 2.2', batteryVoltage: 11.84, batteryHealth: 34, panelStatus: 'offline', solarInput: 0, status: 'critical', location: 'Airport — Zaventem', daysProtected: 412, trend: 'declining' },
-  { id: 'VAN-008', name: 'Connect-01', model: 'Ford Transit Connect', batteryVoltage: 12.72, batteryHealth: 96, panelStatus: 'active', solarInput: 90, status: 'good', location: 'Depot A — Antwerp', daysProtected: 67, trend: 'stable' },
-  { id: 'VAN-009', name: 'Transporter S', model: 'VW Transporter T6.1', batteryVoltage: 12.48, batteryHealth: 83, panelStatus: 'active', solarInput: 59, status: 'good', location: 'Depot B — Ghent', daysProtected: 189, trend: 'stable' },
-  { id: 'VAN-010', name: 'Ducato Max', model: 'Fiat Ducato 2.3', batteryVoltage: 12.23, batteryHealth: 71, panelStatus: 'standby', solarInput: 8, status: 'warning', location: 'Long-Stay Lot — Mechelen', daysProtected: 344, trend: 'declining' },
-  { id: 'TRK-004', name: 'Master XL', model: 'Renault Master 2.3', batteryVoltage: 12.54, batteryHealth: 88, panelStatus: 'active', solarInput: 71, status: 'good', location: 'Depot C — Charleroi', daysProtected: 278, trend: 'stable' },
-  { id: 'VAN-011', name: 'Vivaro South', model: 'Vauxhall Vivaro', batteryVoltage: 12.64, batteryHealth: 93, panelStatus: 'active', solarInput: 82, status: 'good', location: 'Depot A — Antwerp', daysProtected: 104, trend: 'stable' },
+  { id: 'VAN-001', name: 'Transit Alpha', model: 'Ford Transit 2.0', batteryVoltage: 12.71, batteryHealth: 98, panelStatus: 'active', solarInput: 87, status: 'good', location: 'Depot A, Antwerp', daysProtected: 284, trend: 'stable' },
+  { id: 'VAN-002', name: 'Transit Beta', model: 'Ford Transit 2.0', batteryVoltage: 12.68, batteryHealth: 95, panelStatus: 'active', solarInput: 79, status: 'good', location: 'Depot A, Antwerp', daysProtected: 241, trend: 'stable' },
+  { id: 'VAN-003', name: 'Sprinter-01', model: 'Mercedes Sprinter 314', batteryVoltage: 12.61, batteryHealth: 92, panelStatus: 'active', solarInput: 72, status: 'good', location: 'Depot B, Ghent', daysProtected: 198, trend: 'stable' },
+  { id: 'VAN-004', name: 'Sprinter-02', model: 'Mercedes Sprinter 314', batteryVoltage: 12.55, batteryHealth: 89, panelStatus: 'standby', solarInput: 12, status: 'good', location: 'Depot B, Ghent', daysProtected: 176, trend: 'stable' },
+  { id: 'TRK-001', name: 'Crafter Heavy', model: 'VW Crafter 35', batteryVoltage: 12.41, batteryHealth: 76, panelStatus: 'active', solarInput: 61, status: 'good', location: 'Long-Stay Lot, Brussels', daysProtected: 312, trend: 'stable' },
+  { id: 'VAN-005', name: 'Vivaro North', model: 'Vauxhall Vivaro', batteryVoltage: 12.18, batteryHealth: 58, panelStatus: 'active', solarInput: 44, status: 'warning', location: 'Long-Stay Lot, Bruges', daysProtected: 89, trend: 'declining' },
+  { id: 'TRK-002', name: 'Daily Express', model: 'Iveco Daily 35S', batteryVoltage: 12.74, batteryHealth: 94, panelStatus: 'active', solarInput: 88, status: 'good', location: 'Depot A, Antwerp', daysProtected: 156, trend: 'improving' },
+  { id: 'VAN-006', name: 'Transit Gamma', model: 'Ford Transit 2.0', batteryVoltage: 12.52, batteryHealth: 87, panelStatus: 'active', solarInput: 66, status: 'good', location: 'Depot C, Charleroi', daysProtected: 221, trend: 'stable' },
+  { id: 'VAN-007', name: 'Transit Delta', model: 'Ford Transit Custom', batteryVoltage: 12.59, batteryHealth: 91, panelStatus: 'active', solarInput: 75, status: 'good', location: 'Depot C, Charleroi', daysProtected: 133, trend: 'stable' },
+  { id: 'TRK-003', name: 'Boxer Cargo', model: 'Peugeot Boxer 2.2', batteryVoltage: 11.84, batteryHealth: 34, panelStatus: 'offline', solarInput: 0, status: 'critical', location: 'Airport, Zaventem', daysProtected: 412, trend: 'declining' },
+  { id: 'VAN-008', name: 'Connect-01', model: 'Ford Transit Connect', batteryVoltage: 12.72, batteryHealth: 96, panelStatus: 'active', solarInput: 90, status: 'good', location: 'Depot A, Antwerp', daysProtected: 67, trend: 'stable' },
+  { id: 'VAN-009', name: 'Transporter S', model: 'VW Transporter T6.1', batteryVoltage: 12.48, batteryHealth: 83, panelStatus: 'active', solarInput: 59, status: 'good', location: 'Depot B, Ghent', daysProtected: 189, trend: 'stable' },
+  { id: 'VAN-010', name: 'Ducato Max', model: 'Fiat Ducato 2.3', batteryVoltage: 12.23, batteryHealth: 71, panelStatus: 'standby', solarInput: 8, status: 'warning', location: 'Long-Stay Lot, Mechelen', daysProtected: 344, trend: 'declining' },
+  { id: 'TRK-004', name: 'Master XL', model: 'Renault Master 2.3', batteryVoltage: 12.54, batteryHealth: 88, panelStatus: 'active', solarInput: 71, status: 'good', location: 'Depot C, Charleroi', daysProtected: 278, trend: 'stable' },
+  { id: 'VAN-011', name: 'Vivaro South', model: 'Vauxhall Vivaro', batteryVoltage: 12.64, batteryHealth: 93, panelStatus: 'active', solarInput: 82, status: 'good', location: 'Depot A, Antwerp', daysProtected: 104, trend: 'stable' },
 ];
 
 export const CASE_STUDIES: CaseStudy[] = [
@@ -86,7 +76,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     logo: 'EL',
     fleetSize: 340,
     vehicleType: 'Ford Transit & Mercedes Sprinter vans',
-    challenge: 'EuroLogis operated 340 vans across Belgian depots. Vehicles sat overnight and over weekends, and each winter brought a wave of batteries that had gone flat — vans that drivers arrived to start at 6am and could not. Forty-seven battery failures in a single quarter resulted in missed delivery windows, SLA penalty charges, and replacement costs that added up to over €60,000 per year.',
+    challenge: 'EuroLogis operated 340 vans across Belgian depots. Vehicles sat overnight and over weekends, and each winter brought a wave of batteries that had gone flat, vans that drivers arrived to start at 6am and could not. Forty-seven battery failures in a single quarter resulted in missed delivery windows, SLA penalty charges, and replacement costs that added up to over €60,000 per year.',
     solution: 'VoltKeep VS-120 panels were retrofitted across all 340 vans over six weekends. The fleet dashboard was integrated into their existing operations software, giving dispatchers real-time battery voltage for every vehicle before each shift began.',
     results: [
       { metric: 'Dead battery incidents per quarter', before: '47', after: '0', improvement: 'Eliminated' },
@@ -107,7 +97,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     logo: 'NA',
     fleetSize: 85,
     vehicleType: 'Ground support vehicles, escort cars, maintenance vans',
-    challenge: 'Vehicles at Brussels Airport stood on apron stands for 8 to 16 hours between shifts. Cold temperatures and extended parking periods meant that 12% of the fleet was unavailable each morning — drivers arrived to vehicles that would not start. Standby reserves were required, turnarounds were delayed, and battery replacements were running at 34 units per year.',
+    challenge: 'Vehicles at Brussels Airport stood on apron stands for 8 to 16 hours between shifts. Cold temperatures and extended parking periods meant that 12% of the fleet was unavailable each morning, drivers arrived to vehicles that would not start. Standby reserves were required, turnarounds were delayed, and battery replacements were running at 34 units per year.',
     solution: 'All 85 vehicles received VoltKeep VS-120 panels. Battery status feeds directly into the operations room, replacing the manual morning walk-around check that previously took 45 minutes per shift.',
     results: [
       { metric: 'Morning vehicle availability', before: '88%', after: '99.8%', improvement: '+11.8pp' },
@@ -147,23 +137,23 @@ export const CASE_STUDIES: CaseStudy[] = [
 export const FAQ_ITEMS: FAQItem[] = [
   {
     question: 'Why do batteries go flat in parked vehicles?',
-    answer: 'Every 12V lead-acid battery self-discharges naturally over time — even with nothing drawing from it. Modern vehicles also have permanent parasitic loads: alarm systems, central locking, telematics, and various ECUs that draw a small but continuous current. In cold weather, self-discharge accelerates. After a week or two without the engine running to recharge, many batteries drop below the voltage needed to start the vehicle.',
+    answer: 'Every 12V lead-acid battery self-discharges naturally over time, even with nothing drawing from it. Modern vehicles also have permanent parasitic loads: alarm systems, central locking, telematics, and various ECUs that draw a small but continuous current. In cold weather, self-discharge accelerates. After a week or two without the engine running to recharge, many batteries drop below the voltage needed to start the vehicle.',
   },
   {
     question: 'How much power does VoltKeep actually generate?',
-    answer: 'The VS-120 is a 120W peak panel. In typical northern European conditions, it generates an average of 1–8W during daylight hours, depending on cloud cover and sun angle. A parked vehicle\'s parasitic drain is usually 20–80mA — equivalent to 0.24–1W at 12V. So even in overcast conditions, the panel comfortably offsets drain and keeps the battery at full charge.',
+    answer: 'The VS-120 is a 120W peak panel. In typical northern European conditions, it generates an average of 1–8W during daylight hours, depending on cloud cover and sun angle. A parked vehicle\'s parasitic drain is usually 20–80mA, equivalent to 0.24–1W at 12V. So even in overcast conditions, the panel comfortably offsets drain and keeps the battery at full charge.',
   },
   {
     question: 'Does it work on cloudy days and in winter?',
-    answer: 'Yes. Monocrystalline panels generate power from diffuse daylight, not direct sunlight. On a fully overcast day, the VS-120 still produces 15–30% of its rated output — more than enough to offset battery self-discharge. We designed and tested specifically for Belgian and Dutch winter conditions. The product works year-round.',
+    answer: 'Yes. Monocrystalline panels generate power from diffuse daylight, not direct sunlight. On a fully overcast day, the VS-120 still produces 15–30% of its rated output, more than enough to offset battery self-discharge. We designed and tested specifically for Belgian and Dutch winter conditions. The product works year-round.',
   },
   {
     question: 'Does it require any modifications to the vehicle?',
-    answer: 'No. The panel attaches to the roof using our AeroLock adhesive mounting system — no drill holes, no roof penetrations, no changes to the vehicle\'s wiring loom. A single weatherproof cable runs from the panel to the MPPT controller, which connects to the battery with two clips. The installation is fully reversible.',
+    answer: 'No. The panel attaches to the roof using our AeroLock adhesive mounting system, no drill holes, no roof penetrations, no changes to the vehicle\'s wiring loom. A single weatherproof cable runs from the panel to the MPPT controller, which connects to the battery with two clips. The installation is fully reversible.',
   },
   {
     question: 'Will it affect the vehicle\'s manufacturer warranty?',
-    answer: 'No. Because VoltKeep connects in parallel with the battery — not into the vehicle\'s electrical system — it does not modify any factory-fitted components. CE certification documentation confirms this. We provide a letter for your vehicle records on request.',
+    answer: 'No. Because VoltKeep connects in parallel with the battery, not into the vehicle\'s electrical system, it does not modify any factory-fitted components. CE certification documentation confirms this. We provide a letter for your vehicle records on request.',
   },
   {
     question: 'How long does installation take?',
@@ -171,7 +161,7 @@ export const FAQ_ITEMS: FAQItem[] = [
   },
   {
     question: 'What does the monitoring dashboard show?',
-    answer: 'Every 5 minutes, the VoltKeep unit transmits the battery\'s current voltage, state of charge percentage, and the panel\'s output wattage to your fleet dashboard. You can see at a glance which vehicles have healthy batteries, which are trending downward, and which require attention — before any vehicle fails to start.',
+    answer: 'Every 5 minutes, the VoltKeep unit transmits the battery\'s current voltage, state of charge percentage, and the panel\'s output wattage to your fleet dashboard. You can see at a glance which vehicles have healthy batteries, which are trending downward, and which require attention, before any vehicle fails to start.',
   },
   {
     question: 'Can VoltKeep detect when a battery is failing?',
@@ -187,7 +177,7 @@ export const FAQ_ITEMS: FAQItem[] = [
   },
   {
     question: 'Can we run a pilot before committing to the full fleet?',
-    answer: 'Yes — we recommend it. Our standard pilot is 15–30 vehicles over one quarter. We install, monitor, and deliver a written performance report. Over 94% of pilots convert to a full rollout. Pilot pricing is the same as our Starter plan.',
+    answer: 'Yes, we recommend it. Our standard pilot is 15–30 vehicles over one quarter. We install, monitor, and deliver a written performance report. Over 94% of pilots convert to a full rollout. Pilot pricing is the same as our Starter plan.',
   },
   {
     question: 'Does VoltKeep integrate with our existing fleet management software?',

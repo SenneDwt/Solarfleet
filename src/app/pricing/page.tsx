@@ -134,7 +134,7 @@ export default function PricingPage() {
             <div className="grid sm:grid-cols-2 gap-5">
               {[
                 { icon: '✅', title: 'Hardware included', desc: 'The VS-120 panel, MPPT controller, and IoT module are included in all plans. You own the hardware.' },
-                { icon: '🔧', title: 'Installation quoted separately', desc: 'Installation is not included in the SaaS fee — it varies by fleet size and location. We provide a fixed quote up front.' },
+                { icon: '🔧', title: 'Installation quoted separately', desc: 'Installation is not included in the SaaS fee, it varies by fleet size and location. We provide a fixed quote up front.' },
                 { icon: '🔄', title: '30-day pilot, then commit', desc: 'All new customers start with a 30-vehicle pilot at no extra cost. You only commit to a plan if the pilot delivers results.' },
                 { icon: '❌', title: 'No lock-in', desc: 'Annual plans can be cancelled with 60 days notice. We keep customers by delivering results, not contractual obligation.' },
               ].map(item => (
@@ -160,11 +160,11 @@ export default function PricingPage() {
               {[
                 {
                   q: 'Can I mix plans across my fleet?',
-                  a: 'Yes. You can run some vehicles on Starter and others on Growth — useful if you\'re running a pilot segment. Enterprise customers typically consolidate everything under a single custom agreement.',
+                  a: 'Yes. You can run some vehicles on Starter and others on Growth, useful if you\'re running a pilot segment. Enterprise customers typically consolidate everything under a single custom agreement.',
                 },
                 {
                   q: 'What happens when we exceed our vehicle limit?',
-                  a: 'You\'ll receive an alert when you\'re within 10% of your plan limit. Adding vehicles beyond the limit automatically upgrades you to the next tier at a pro-rated rate — no service interruption.',
+                  a: 'You\'ll receive an alert when you\'re within 10% of your plan limit. Adding vehicles beyond the limit automatically upgrades you to the next tier at a pro-rated rate, no service interruption.',
                 },
                 {
                   q: 'Is there a minimum contract length?',

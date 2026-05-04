@@ -63,7 +63,7 @@ export default function DashboardPage() {
       {/* Demo banner */}
       <div className="bg-yellow-500/10 border-b border-yellow-600/20 px-4 py-2.5 text-center">
         <p className="text-sm text-yellow-800 dark:text-yellow-300">
-          <strong>Fleet Dashboard Demo</strong> — Simulated data updating live every 5 seconds.{' '}
+          <strong>Fleet Dashboard Demo</strong>, simulated data updating live every 5 seconds.{' '}
           <Link href="/contact" className="underline hover:text-[var(--amber-text)]">Book a demo</Link> to connect your real fleet.
         </p>
       </div>
@@ -77,7 +77,7 @@ export default function DashboardPage() {
               {vehicles.length} vehicles
               <span className="inline-flex items-center gap-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                <span>Live — {lastUpdate.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}</span>
+                <span>Live: {lastUpdate.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}</span>
               </span>
             </p>
           </div>
@@ -127,7 +127,7 @@ export default function DashboardPage() {
                 {counts.critical} vehicle{counts.critical !== 1 ? 's' : ''} with critically low battery voltage
               </div>
               <div className="text-xs text-red-500 mt-0.5">
-                {vehicles.filter(v => v.status === 'critical').map(v => v.id).join(', ')} — battery may not start
+                {vehicles.filter(v => v.status === 'critical').map(v => v.id).join(', ')}, battery may not start
               </div>
             </div>
           </div>

@@ -68,7 +68,7 @@ export default function ContactPage() {
               No Obligation.<br />Just Honest Answers.
             </h1>
             <p className="text-[var(--fg-muted)] text-lg leading-relaxed">
-              Tell us about your fleet and what&apos;s frustrating you. Our fleet specialists — who are actual former fleet managers — will get back to you within 4 business hours with specific, useful information. No scripts. No hard sell.
+              Tell us about your fleet and what&apos;s frustrating you. Our fleet specialists, who are actual former fleet managers, will get back to you within 4 business hours with specific, useful information. No scripts. No hard sell.
             </p>
           </div>
         </div>
@@ -214,7 +214,7 @@ export default function ContactPage() {
               <Card className="p-6">
                 <h3 className="font-bold text-[var(--fg)] mb-4">📅 Book a Demo Directly</h3>
                 <p className="text-sm text-[var(--fg-muted)] mb-4 leading-relaxed">
-                  Prefer to pick a time slot straight away? Book a 30-minute video call with a fleet specialist — no hold music, no PA filter.
+                  Prefer to pick a time slot straight away? Book a 30-minute video call with a fleet specialist, no hold music, no PA filter.
                 </p>
                 <div className="rounded-lg bg-[var(--bg)] border border-[var(--card-border)] p-4 text-center">
                   <div className="text-2xl mb-2">📆</div>
@@ -254,7 +254,7 @@ export default function ContactPage() {
                 <div className="text-2xl mb-3">🚀</div>
                 <h3 className="font-bold text-green-300 mb-2">Free Fleet Audit</h3>
                 <p className="text-sm text-green-400/80 leading-relaxed mb-3">
-                  Not sure VoltKeep is right for your fleet? Let us audit your current battery costs, failure patterns, and vehicle types — free, no obligation, within 5 working days.
+                  Not sure VoltKeep is right for your fleet? Let us audit your current battery costs, failure patterns, and vehicle types, free, no obligation, within 5 working days.
                 </p>
                 <Link href="/benefits">
                   <button className="text-sm font-semibold text-green-300 hover:text-green-200 transition-colors">

@@ -5,7 +5,7 @@ export default function SolarCharger() {
     <div
       className="relative w-full select-none"
       style={{ maxWidth: 420 }}
-      aria-label="Animated diagram: solar energy flows from sun through roof panel into a fleet car battery"
+      aria-label="Animated diagram: solar energy flows from sun through roof panel into a fleet van battery"
       role="img"
     >
       <svg
@@ -23,13 +23,9 @@ export default function SolarCharger() {
             <stop offset="0%" stopColor="#1e3a5f" />
             <stop offset="100%" stopColor="#0a1628" />
           </linearGradient>
-          <linearGradient id="carGrad" x1="0" y1="0" x2="0" y2="1">
+          <linearGradient id="vanGrad" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="#1e3d70" />
             <stop offset="100%" stopColor="#0d2040" />
-          </linearGradient>
-          <linearGradient id="carSideGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#243d6e" />
-            <stop offset="100%" stopColor="#0f2240" />
           </linearGradient>
           <filter id="sunGlow" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="5" result="blur" />
@@ -70,16 +66,16 @@ export default function SolarCharger() {
           <circle cx="-8" cy="-8" r="8" fill="white" opacity="0.15" />
         </g>
 
-        {/* ── Dashed flow line: sun → panel ────────────────────── */}
+        {/* ── Dashed flow: sun → panel ──────────────────────────── */}
         <line x1="210" y1="96" x2="210" y2="178"
           stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="5 4" opacity="0.5">
           <animate attributeName="strokeDashoffset" values="18;0" dur="0.8s" repeatCount="indefinite" />
         </line>
 
-        {/* ── Particles: sun → car roof ─────────────────────────── */}
+        {/* ── Energy particles: sun → van roof ─────────────────── */}
         {[0, 0.8, 1.6].map((delay, i) => (
           <circle key={i} r="5.5" cx="210" fill="#fbbf24" filter="url(#ptGlow)">
-            <animate attributeName="cy" from="105" to="335"
+            <animate attributeName="cy" from="105" to="336"
               dur="2.4s" begin={`${delay}s`} repeatCount="indefinite" calcMode="spline"
               keySplines="0.4 0 0.6 1" keyTimes="0;1" />
             <animate attributeName="opacity" values="0;1;1;0"
@@ -106,103 +102,120 @@ export default function SolarCharger() {
           </text>
         </g>
 
-        {/* ── Dashed flow: panel → car roof ────────────────────── */}
+        {/* ── Dashed flow: panel → van roof ────────────────────── */}
         <line x1="210" y1="260" x2="210" y2="337"
           stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="5 4" opacity="0.4">
           <animate attributeName="strokeDashoffset" values="18;0" dur="0.8s" begin="0.3s" repeatCount="indefinite" />
         </line>
 
-        {/* ── Car / Sedan ───────────────────────────────────────── */}
-        {/*   Facing right: front = right, rear = left              */}
+        {/* ── Cargo van (delivery van / Transit style) ──────────── */}
+        {/* Faces right, front on right, rear on left */}
         <g transform="translate(28, 318)">
 
           {/* Ground shadow */}
-          <ellipse cx="185" cy="174" rx="170" ry="8" fill="#0a1628" opacity="0.18" />
+          <ellipse cx="188" cy="176" rx="170" ry="8" fill="#0a1628" opacity="0.18" />
 
-          {/* Wheels (drawn first so body overlaps top of wheel) */}
           {/* Rear wheel */}
-          <circle cx="80" cy="148" r="26" fill="#0a1628" stroke="#334155" strokeWidth="2.5" />
-          <circle cx="80" cy="148" r="13" fill="#162e52" />
+          <circle cx="82" cy="150" r="26" fill="#0a1628" stroke="#334155" strokeWidth="2.5" />
+          <circle cx="82" cy="150" r="13" fill="#162e52" />
           {[0,60,120,180,240,300].map(a => {
             const rad = (a * Math.PI) / 180;
             return <line key={a}
-              x1={80 + Math.cos(rad) * 5} y1={148 + Math.sin(rad) * 5}
-              x2={80 + Math.cos(rad) * 12} y2={148 + Math.sin(rad) * 12}
+              x1={82 + Math.cos(rad) * 5} y1={150 + Math.sin(rad) * 5}
+              x2={82 + Math.cos(rad) * 12} y2={150 + Math.sin(rad) * 12}
               stroke="#27508a" strokeWidth="1.8" strokeLinecap="round" />;
           })}
-          <circle cx="80" cy="148" r="4" fill="#334155" />
+          <circle cx="82" cy="150" r="4" fill="#334155" />
+
           {/* Front wheel */}
-          <circle cx="308" cy="148" r="26" fill="#0a1628" stroke="#334155" strokeWidth="2.5" />
-          <circle cx="308" cy="148" r="13" fill="#162e52" />
+          <circle cx="308" cy="150" r="26" fill="#0a1628" stroke="#334155" strokeWidth="2.5" />
+          <circle cx="308" cy="150" r="13" fill="#162e52" />
           {[0,60,120,180,240,300].map(a => {
             const rad = (a * Math.PI) / 180;
             return <line key={a}
-              x1={308 + Math.cos(rad) * 5} y1={148 + Math.sin(rad) * 5}
-              x2={308 + Math.cos(rad) * 12} y2={148 + Math.sin(rad) * 12}
+              x1={308 + Math.cos(rad) * 5} y1={150 + Math.sin(rad) * 5}
+              x2={308 + Math.cos(rad) * 12} y2={150 + Math.sin(rad) * 12}
               stroke="#27508a" strokeWidth="1.8" strokeLinecap="round" />;
           })}
-          <circle cx="308" cy="148" r="4" fill="#334155" />
+          <circle cx="308" cy="150" r="4" fill="#334155" />
 
-          {/* ── Car body silhouette (sedan profile) ──────────────── */}
-          {/* Lower body / door sills */}
+          {/* === Van body: flat-roof delivery van profile === */}
+          {/*
+              Flat cargo roof from rear (x=12) to x=290.
+              Windshield rakes from (290,18) down to (350,52).
+              Short hood ledge: (350,52) → (368,52).
+              Vertical front face: (368,52) → (368,124).
+              Flat bottom closes the path.
+          */}
           <path
-            d="M 16,120 L 16,98 Q 17,88 28,86 L 48,80 L 62,62 L 88,26 L 116,14 L 306,14 L 320,26 L 340,60 L 356,80 L 366,86 Q 372,88 372,98 L 372,120 L 16,120 Z"
-            fill="url(#carGrad)" stroke="#27508a" strokeWidth="1.5"
+            d="M 12,124 L 12,18 L 290,18 L 350,52 L 368,52 L 368,124 Z"
+            fill="url(#vanGrad)"
+            stroke="#27508a"
+            strokeWidth="1.5"
           />
 
-          {/* Roof highlight strip */}
-          <rect x="116" y="14" width="190" height="5" rx="2" fill="#2a4e85" opacity="0.5" />
+          {/* Cargo / cab divider */}
+          <line x1="264" y1="18" x2="264" y2="124" stroke="#152e5a" strokeWidth="2" />
 
-          {/* Windshield (front / right) */}
+          {/* Windshield glass */}
           <path
-            d="M 306,14 L 320,26 L 340,60 L 306,60 Z"
-            fill="#60a5fa" opacity="0.22" stroke="#60a5fa" strokeWidth="0.8" strokeOpacity="0.4"
+            d="M 270,22 L 288,22 L 347,52 L 347,118 L 270,118 Z"
+            fill="#60a5fa"
+            opacity="0.20"
+            stroke="#60a5fa"
+            strokeWidth="0.8"
+            strokeOpacity="0.4"
           />
 
-          {/* Rear window (back / left) */}
-          <path
-            d="M 116,14 L 88,26 L 62,62 L 116,62 Z"
-            fill="#60a5fa" opacity="0.16" stroke="#60a5fa" strokeWidth="0.8" strokeOpacity="0.3"
-          />
+          {/* Rear side window */}
+          <rect x="16" y="24" width="52" height="38" rx="3"
+            fill="#60a5fa" opacity="0.12" stroke="#60a5fa" strokeWidth="0.8" strokeOpacity="0.25" />
 
-          {/* Side glass (centre cabin) */}
-          <rect x="120" y="18" width="182" height="42" rx="3"
-            fill="#60a5fa" opacity="0.12" stroke="#60a5fa" strokeWidth="0.8" strokeOpacity="0.2" />
+          {/* Cargo panel area */}
+          <rect x="72" y="24" width="184" height="58" rx="3"
+            fill="#172d52" opacity="0.20" stroke="#1a3360" strokeWidth="0.8" />
 
-          {/* Door divider */}
-          <line x1="210" y1="62" x2="210" y2="120" stroke="#1e3d70" strokeWidth="1.5" />
+          {/* Sliding door vertical crease */}
+          <line x1="180" y1="24" x2="180" y2="118" stroke="#1a3360" strokeWidth="1.2" />
 
-          {/* Door handles */}
-          <rect x="222" y="94" width="22" height="6" rx="3" fill="#334155" />
-          <rect x="145" y="94" width="22" height="6" rx="3" fill="#334155" />
+          {/* Door handle */}
+          <rect x="190" y="84" width="26" height="7" rx="3.5" fill="#334155" />
+          <rect x="191" y="85" width="8" height="5" rx="2.5" fill="#475569" />
 
           {/* Headlight (front/right) */}
-          <rect x="356" y="74" width="16" height="8" rx="3" fill="#fef08a" opacity="0.9">
-            <animate attributeName="opacity" values="0.7;1;0.7" dur="2.5s" repeatCount="indefinite" />
-          </rect>
+          <path d="M 350,56 L 366,56 L 366,68 L 350,68 Z" rx="2"
+            fill="#fef08a" opacity="0.85">
+            <animate attributeName="opacity" values="0.65;0.95;0.65" dur="2.5s" repeatCount="indefinite" />
+          </path>
+          {/* DRL accent below headlight */}
+          <rect x="350" y="70" width="16" height="4" rx="1" fill="#fef08a" opacity="0.40" />
 
           {/* Taillight (rear/left) */}
-          <rect x="16" y="74" width="12" height="8" rx="2" fill="#ef4444" opacity="0.65" />
+          <rect x="12" y="72" width="9" height="26" rx="2" fill="#ef4444" opacity="0.65" />
+          <rect x="12" y="72" width="9" height="10" rx="2" fill="#fbbf24" opacity="0.45" />
 
-          {/* Front bumper grille */}
-          <rect x="368" y="88" width="9" height="16" rx="2" fill="#0a1628" stroke="#334155" strokeWidth="0.8" />
+          {/* Front bumper */}
+          <rect x="364" y="102" width="14" height="18" rx="3" fill="#0a1628" stroke="#334155" strokeWidth="0.8" />
 
-          {/* Rear bumper bar */}
-          <rect x="11" y="100" width="10" height="14" rx="2" fill="#0f2240" stroke="#334155" strokeWidth="0.8" />
+          {/* Rear bumper */}
+          <rect x="8" y="110" width="10" height="16" rx="2" fill="#0f2240" stroke="#334155" strokeWidth="0.8" />
 
-          {/* Solar panel mount strip on roof */}
-          <rect x="108" y="10" width="208" height="5" rx="2.5" fill="#1a3360" stroke="#334155" strokeWidth="0.8" />
+          {/* Wheel arch recesses */}
+          <path d="M 54,124 A 32,13 0 0 1 112,124" fill="#0a1628" opacity="0.50" />
+          <path d="M 280,124 A 32,13 0 0 1 338,124" fill="#0a1628" opacity="0.50" />
 
-          {/* VoltKeep badge on door */}
-          <text x="186" y="82" textAnchor="middle" fill="#f59e0b" fontSize="7.5" fontWeight="700" fontFamily="system-ui" opacity="0.9">VOLTKEEP</text>
-          <text x="186" y="94" textAnchor="middle" fill="#8ba6c4" fontSize="6" fontFamily="system-ui" opacity="0.6">VS-120</text>
+          {/* Sill strip */}
+          <rect x="12" y="116" width="356" height="8" rx="2" fill="#0d1e3a" stroke="#1a3360" strokeWidth="0.5" />
 
-          {/* Wheel arch recesses (drawn over body to show arch) */}
-          <path d="M 50,120 A 32,14 0 0 1 110,120" fill="#0a1628" opacity="0.35" />
-          <path d="M 278,120 A 32,14 0 0 1 338,120" fill="#0a1628" opacity="0.35" />
+          {/* Solar panel mount rail on flat roof */}
+          <rect x="16" y="14" width="260" height="5" rx="2.5" fill="#1a3360" stroke="#334155" strokeWidth="0.8" />
 
-          {/* ── Battery (inside car, overlaid on body) ──────────── */}
-          <g transform="translate(118, 68)">
+          {/* Brand lettering on cargo door */}
+          <text x="126" y="60" textAnchor="middle" fill="#f59e0b" fontSize="8" fontWeight="700" fontFamily="system-ui" opacity="0.9">VOLTKEEP</text>
+          <text x="126" y="70" textAnchor="middle" fill="#8ba6c4" fontSize="6" fontFamily="system-ui" opacity="0.6">VS-120</text>
+
+          {/* === Battery schematic inside cargo area === */}
+          <g transform="translate(70, 46)">
             <rect width="126" height="50" rx="7" fill="none" stroke="#475569" strokeWidth="2" />
             <rect x="48" y="-9" width="28" height="10" rx="3" fill="#475569" />
             <rect x="3" y="3" width="120" height="44" rx="5" fill="#0a1628" />

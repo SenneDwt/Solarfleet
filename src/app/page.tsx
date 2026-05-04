@@ -6,45 +6,34 @@ import Card from '@/components/ui/Card';
 import Badge from '@/components/ui/Badge';
 import RevealSection from '@/components/ui/RevealSection';
 import FeatureIcon from '@/components/ui/FeatureIcon';
-import { FEATURES, STATS, CASE_STUDIES } from '@/lib/constants';
+import { FEATURES, CASE_STUDIES } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'VoltKeep — Fleet Batteries That Never Go Flat',
+  title: 'VoltKeep: Fleet Batteries That Never Go Flat',
   description:
     'VoltKeep mounts a solar panel to any fleet vehicle and keeps the 12V battery topped up while it is parked. No more dead batteries. No more vehicles that refuse to start.',
 };
-
-const TRUST_LOGOS = [
-  'EuroLogis Express', 'Northern Air Services', 'CityMed Healthcare',
-  'FleetCore Belgium', 'AMS Ground', 'TransNord BV',
-];
 
 export default function HomePage() {
   return (
     <div>
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative min-h-[calc(100vh-64px)] flex items-center overflow-hidden bg-[var(--bg-secondary)] border-b border-[var(--card-border)]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_65%_35%,rgba(245,158,11,0.14),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.1))]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(10,22,40,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(10,22,40,0.04)_1px,transparent_1px)] bg-[size:64px_64px]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-50/60 via-white to-white" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_65%_55%_at_70%_30%,rgba(245,158,11,0.12),transparent_65%)]" />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 w-full">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             {/* Copy */}
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-yellow-600/30 bg-yellow-500/10 px-3 py-1 text-xs font-semibold text-yellow-800 mb-7">
-                <span className="w-1.5 h-1.5 rounded-full bg-yellow-500 animate-pulse" />
-                10,847 Fleet Vehicles Protected Across Europe
-              </div>
-
-              <h1 className="text-4xl sm:text-5xl lg:text-[3.4rem] font-extrabold leading-tight tracking-tight text-[var(--fg)] mb-6">
-                Your vehicles sit parked.<br />
-                Their batteries <span className="text-gradient">die.</span><br />
-                Not anymore.
+              <h1 className="text-5xl sm:text-6xl lg:text-[4rem] xl:text-[4.75rem] font-extrabold leading-[1.08] tracking-tight text-[var(--fg)] mb-7">
+                Your fleet.<br />
+                Dead batteries.<br />
+                <span className="text-[var(--amber)]">Not anymore.</span>
               </h1>
 
-              <p className="text-lg text-[var(--fg-muted)] leading-relaxed mb-8 max-w-lg">
-                VoltKeep attaches a solar panel to any fleet vehicle. While it sits in your depot, airport, or long-stay lot, the panel keeps the 12V battery fully charged. The vehicle starts every time — without fail.
+              <p className="text-lg text-[var(--fg-muted)] leading-relaxed mb-8">
+                VoltKeep attaches a solar panel to any fleet vehicle. While it sits in your depot, airport, or long-stay lot, the panel keeps the 12V battery fully charged. The vehicle starts every time, without fail.
               </p>
 
               <div className="flex flex-wrap gap-3 mb-10">
@@ -63,12 +52,12 @@ export default function HomePage() {
 
               <div className="flex flex-wrap gap-8">
                 {[
-                  { n: '0', label: 'Dead batteries since launch' },
+                  { n: '120W', label: 'Peak solar panel output' },
                   { n: '3–5×', label: 'Longer battery lifespan' },
                   { n: '45 min', label: 'Installation time' },
                 ].map(s => (
                   <div key={s.label}>
-                    <div className="text-2xl font-extrabold text-[var(--amber-text)] stat-value">{s.n}</div>
+                    <div className="text-2xl font-extrabold text-[var(--amber)] stat-value">{s.n}</div>
                     <div className="text-xs text-[var(--fg-muted)] mt-0.5">{s.label}</div>
                   </div>
                 ))}
@@ -85,14 +74,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Stats bar ────────────────────────────────────────── */}
+      {/* ── Product specs bar ────────────────────────────────── */}
       <section className="bg-[var(--amber)]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {STATS.map(stat => (
+            {[
+              { value: '120W', label: 'Monocrystalline panel output' },
+              { value: 'IP67', label: 'Fully sealed, all conditions' },
+              { value: '5 min', label: 'Live battery reporting interval' },
+              { value: '5 yr', label: 'Maximum warranty' },
+            ].map(stat => (
               <div key={stat.label} className="text-center text-[var(--navy)]">
                 <div className="text-3xl sm:text-4xl font-extrabold stat-value tracking-tight">
-                  {stat.value}{stat.suffix}
+                  {stat.value}
                 </div>
                 <div className="text-sm font-medium opacity-70 mt-1">{stat.label}</div>
               </div>
@@ -154,12 +148,12 @@ export default function HomePage() {
                   One panel. Battery never goes flat. Vehicle always starts.
                 </h2>
                 <p className="text-[var(--fg-muted)] leading-relaxed mb-8">
-                  VoltKeep attaches a 120W solar panel to the roof of any fleet vehicle. A smart charge controller continuously feeds a small, steady trickle into the 12V battery — exactly enough to offset natural self-discharge and keep the battery at full charge indefinitely, no matter how long the vehicle sits.
+                  VoltKeep attaches a 120W solar panel to the roof of any fleet vehicle. A smart charge controller continuously feeds a small, steady trickle into the 12V battery, exactly enough to offset natural self-discharge and keep the battery at full charge indefinitely, no matter how long the vehicle sits.
                 </p>
                 <div className="space-y-4">
                   {[
                     { title: 'Vehicle is parked', desc: 'The engine is off. The battery is slowly losing charge.' },
-                    { title: 'Panel generates power', desc: 'Sunlight — even diffuse winter light — hits the panel and produces electricity.' },
+                    { title: 'Panel generates power', desc: 'Sunlight, even diffuse winter light, hits the panel and produces electricity.' },
                     { title: 'Controller maintains the battery', desc: 'A precise trickle keeps the battery fully charged. It never drops low enough to cause a no-start.' },
                     { title: 'Driver turns the key', desc: 'The vehicle starts. Every time. Without exception.' },
                   ].map((step, i) => (
@@ -185,9 +179,9 @@ export default function HomePage() {
                   <div className="text-xs font-semibold text-[var(--amber-text)] tracking-widest uppercase mb-5">VS-120 at a Glance</div>
                   {[
                     ['Panel output', '120W peak monocrystalline'],
-                    ['Charge controller', 'Smart MPPT — no overcharge risk'],
-                    ['Mounting', 'No drill holes — adhesive bond rated 80 km/h'],
-                    ['Weather protection', 'IP67 — fully sealed, all conditions'],
+                    ['Charge controller', 'Smart MPPT, no overcharge risk'],
+                    ['Mounting', 'No drill holes, adhesive bond rated 80 km/h'],
+                    ['Weather protection', 'IP67, fully sealed, all conditions'],
                     ['Monitoring', 'LTE-M cellular, 5-min reporting intervals'],
                     ['Installation time', '40–60 minutes per vehicle'],
                     ['Vehicle compatibility', 'Any van, truck, or car with metal roof'],
@@ -215,7 +209,7 @@ export default function HomePage() {
                 Built for the depot, not the showroom.
               </h2>
               <p className="text-[var(--fg-muted)] max-w-xl mx-auto">
-                VoltKeep was designed around one question: what does a fleet manager actually need? Not theoretical solar performance — reliable battery protection, every day, on every vehicle.
+                VoltKeep was designed around one question: what does a fleet manager actually need? Not theoretical solar performance, reliable battery protection, every day, on every vehicle.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -227,24 +221,6 @@ export default function HomePage() {
                   <h3 className="font-bold text-[var(--fg)] mb-2 text-sm leading-snug">{feature.title}</h3>
                   <p className="text-xs text-[var(--fg-muted)] leading-relaxed">{feature.description}</p>
                 </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-      </RevealSection>
-
-      {/* ── Trust ────────────────────────────────────────────── */}
-      <RevealSection>
-        <section className="py-12 border-y border-[var(--card-border)] bg-[var(--bg-secondary)]">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <p className="text-center text-xs font-semibold tracking-widest uppercase text-[var(--fg-muted)] mb-8">
-              Trusted by fleet operators across Belgium, Netherlands, Germany and France
-            </p>
-            <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-14">
-              {TRUST_LOGOS.map(name => (
-                <div key={name} className="text-sm font-semibold text-[var(--fg-muted)] opacity-60 hover:opacity-100 transition-opacity">
-                  {name}
-                </div>
               ))}
             </div>
           </div>
@@ -287,7 +263,7 @@ export default function HomePage() {
                     &ldquo;{cs.quote}&rdquo;
                   </blockquote>
                   <div className="text-xs text-[var(--fg-muted)]">
-                    — {cs.quotee}, {cs.quoteeRole}
+                    {cs.quotee}, {cs.quoteeRole}
                   </div>
                 </Card>
               ))}
