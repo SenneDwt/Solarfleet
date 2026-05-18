@@ -11,7 +11,7 @@ export default function Card({ children, className, variant = 'default', hover =
   const variants = {
     default: 'bg-[var(--card-bg)] border border-[var(--card-border)]',
     glass: 'glass',
-    highlight: 'bg-[var(--card-bg)] border border-yellow-600/30 shadow-lg shadow-yellow-500/5',
+    highlight: 'bg-[var(--card-bg)] border border-[var(--amber)]/30 shadow-lg shadow-[var(--amber)]/5',
   };
 
   return (

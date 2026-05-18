@@ -38,13 +38,13 @@ export default function Navbar() {
         <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group" aria-label="VoltKeep home">
-            <div className="w-8 h-8 rounded-lg bg-yellow-600 flex items-center justify-center shadow-md shadow-yellow-500/20 group-hover:bg-yellow-500 transition-colors">
+            <div className="w-8 h-8 rounded-lg bg-[var(--amber)] flex items-center justify-center shadow-md shadow-[var(--amber-shadow)] group-hover:bg-[var(--amber-hover)] transition-colors">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none">
                 <path d="M13 3L4 14h7l-1 7 9-11h-7l1-7z" fill="white" />
               </svg>
             </div>
             <span className="text-[15px] font-bold tracking-tight text-[var(--fg)]">
-              Volt<span className="text-yellow-600">Keep</span>
+              Volt<span className="text-[var(--amber)]">Keep</span>
             </span>
           </Link>
 
@@ -57,13 +57,13 @@ export default function Navbar() {
                   className={cn(
                     'relative px-3 py-2 text-sm font-medium rounded-md transition-colors',
                     pathname === link.href
-                      ? 'text-yellow-600'
+                      ? 'text-[var(--amber)]'
                       : 'text-[var(--fg-muted)] hover:text-[var(--fg)]'
                   )}
                 >
                   {link.label}
                   {pathname === link.href && (
-                    <span className="absolute inset-x-3 bottom-0.5 h-0.5 bg-yellow-600 rounded-full" />
+                    <span className="absolute inset-x-3 bottom-0.5 h-0.5 bg-[var(--amber)] rounded-full" />
                   )}
                 </Link>
               </li>
@@ -114,7 +114,7 @@ export default function Navbar() {
         )}
       >
         <div className="flex items-center justify-between px-5 py-4 border-b border-[var(--card-border)]">
-          <span className="font-bold text-[var(--fg)]">Volt<span className="text-yellow-600">Keep</span></span>
+          <span className="font-bold text-[var(--fg)]">Volt<span className="text-[var(--amber)]">Keep</span></span>
           <button onClick={() => setMobileOpen(false)} className="w-8 h-8 flex items-center justify-center rounded-lg text-[var(--fg-muted)] hover:bg-[var(--surface)] transition-all" aria-label="Close menu">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
@@ -129,7 +129,7 @@ export default function Navbar() {
               className={cn(
                 'px-4 py-3 rounded-lg text-sm font-medium transition-colors',
                 pathname === link.href
-                  ? 'bg-yellow-500/10 text-yellow-700'
+                  ? 'bg-[var(--amber-soft)] text-[var(--amber-text)]'
                   : 'text-[var(--fg-muted)] hover:text-[var(--fg)] hover:bg-[var(--surface)]'
               )}
             >

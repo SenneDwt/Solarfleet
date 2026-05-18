@@ -56,7 +56,7 @@ export default function CaseStudiesPage() {
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-10">
-                  <div className="w-14 h-14 rounded-xl bg-amber-500/15 border border-amber-600/25 flex items-center justify-center text-[var(--amber-text)] font-extrabold text-xl">
+                  <div className="w-14 h-14 rounded-xl bg-[var(--amber-soft)] border border-[var(--amber)]/25 flex items-center justify-center text-[var(--amber-text)] font-extrabold text-xl">
                     {cs.logo}
                   </div>
                   <div>
@@ -91,7 +91,7 @@ export default function CaseStudiesPage() {
                       <p className="text-sm text-[var(--fg-muted)] leading-relaxed">{cs.solution}</p>
                     </div>
                     {/* Quote */}
-                    <Card className="p-6 border-l-4 border-yellow-600 rounded-l-none">
+                    <Card className="p-6 border-l-4 border-[var(--amber)] rounded-l-none">
                       <blockquote className="text-[var(--fg)] italic leading-relaxed mb-3">
                         &ldquo;{cs.quote}&rdquo;
                       </blockquote>

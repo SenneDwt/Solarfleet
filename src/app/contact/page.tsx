@@ -102,7 +102,6 @@ export default function ContactPage() {
                         { value: 'demo', label: '📅 Book a Demo' },
                         { value: 'pilot', label: '🚀 Start a Pilot' },
                         { value: 'audit', label: '🔍 Free Fleet Audit' },
-                        { value: 'pricing', label: '💰 Pricing Info' },
                         { value: 'technical', label: '⚙️ Technical Question' },
                       ].map(opt => (
                         <button
@@ -111,8 +110,8 @@ export default function ContactPage() {
                           onClick={() => setForm(prev => ({ ...prev, interest: opt.value }))}
                           className={`px-4 py-2 rounded-lg text-sm font-medium border transition-all ${
                             form.interest === opt.value
-                              ? 'bg-yellow-500/20 border-yellow-600/50 text-yellow-800'
-                              : 'border-[var(--card-border)] text-[var(--fg-muted)] hover:border-yellow-600/30 hover:text-[var(--fg)]'
+                              ? 'bg-[var(--amber-soft-20)] border-[var(--amber)]/50 text-[var(--amber-text)]'
+                              : 'border-[var(--card-border)] text-[var(--fg-muted)] hover:border-[var(--amber)]/30 hover:text-[var(--fg)]'
                           }`}
                         >
                           {opt.label}
@@ -153,7 +152,7 @@ export default function ContactPage() {
                       <select
                         value={form.fleetSize}
                         onChange={update('fleetSize')}
-                        className={`w-full rounded-lg border bg-[var(--input-bg)] border-[var(--input-border)] px-4 py-2.5 text-sm text-[var(--fg)] focus:outline-none focus:ring-2 focus:ring-yellow-500/50 focus:border-yellow-600/60 transition-all ${errors.fleetSize ? 'border-red-500/60' : ''}`}
+                        className={`w-full rounded-lg border bg-[var(--input-bg)] border-[var(--input-border)] px-4 py-2.5 text-sm text-[var(--fg)] focus:outline-none focus:ring-2 focus:ring-[var(--amber)]/50 focus:border-[var(--amber)]/60 transition-all ${errors.fleetSize ? 'border-red-500/60' : ''}`}
                         aria-label="Fleet size"
                       >
                         <option value="">Select fleet size</option>
@@ -194,7 +193,7 @@ export default function ContactPage() {
                       onChange={update('message')}
                       rows={4}
                       placeholder="Tell us about your fleet, your current battery headaches, or any specific questions you have..."
-                      className="w-full rounded-lg border bg-[var(--input-bg)] border-[var(--input-border)] px-4 py-2.5 text-sm text-[var(--fg)] placeholder:text-[var(--fg-muted)] focus:outline-none focus:ring-2 focus:ring-yellow-500/50 focus:border-yellow-600/60 transition-all resize-none"
+                      className="w-full rounded-lg border bg-[var(--input-bg)] border-[var(--input-border)] px-4 py-2.5 text-sm text-[var(--fg)] placeholder:text-[var(--fg-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--amber)]/50 focus:border-[var(--amber)]/60 transition-all resize-none"
                     />
                   </div>
 
@@ -240,7 +239,7 @@ export default function ContactPage() {
                       <div>
                         <div className="text-xs text-[var(--fg-muted)]">{item.label}</div>
                         {item.href ? (
-                          <a href={item.href} className="text-sm font-medium text-yellow-600 hover:text-yellow-500 transition-colors">{item.value}</a>
+                          <a href={item.href} className="text-sm font-medium text-[var(--amber)] hover:opacity-80 transition-opacity">{item.value}</a>
                         ) : (
                           <div className="text-sm text-[var(--fg)]">{item.value}</div>
                         )}

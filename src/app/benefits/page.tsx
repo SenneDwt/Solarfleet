@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
-import Badge from '@/components/ui/Badge';
 import RevealSection from '@/components/ui/RevealSection';
 import { CASE_STUDIES } from '@/lib/constants';
 
@@ -11,30 +10,26 @@ export default function BenefitsPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative py-24 bg-[var(--bg-secondary)] overflow-hidden border-b border-[var(--card-border)]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_80%,rgba(245,158,11,0.10),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.08))]" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <Badge variant="amber" className="mb-5">The Business Case</Badge>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-[var(--fg)] mb-6">
-            What a Dead Battery Actually Costs You.
-          </h1>
-          <p className="text-[var(--fg-muted)] text-lg max-w-2xl mx-auto">
-            Most fleet managers underestimate this number. Once you add up replacements, call-outs, driver time, and missed deliveries, the real cost per incident is significant.
-          </p>
+      <section className="py-20 border-b border-[var(--card-border)]">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-[var(--fg)] mb-5 leading-tight">
+              What a dead battery actually costs.
+            </h1>
+            <p className="text-[var(--fg-muted)] text-lg">
+              Most fleet managers budget for the battery itself. That's the smallest part of the cost.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Cost breakdown */}
       <RevealSection>
-        <section className="py-24 bg-[var(--bg)]">
+        <section className="py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-14">
-              <Badge variant="muted" className="mb-4">Cost Per Incident</Badge>
-              <h2 className="text-3xl font-bold text-[var(--fg)]">The Full Cost of One Dead Battery</h2>
-              <p className="text-[var(--fg-muted)] mt-3 max-w-xl mx-auto">
-                Fleet managers often budget for the battery itself. The battery is the smallest part of the cost.
-              </p>
+            <div className="mb-14">
+              <h2 className="text-3xl font-bold text-[var(--fg)] mb-3">The full cost of one incident</h2>
+              <p className="text-[var(--fg-muted)] max-w-xl">Four cost lines, not one. Most fleets only count the battery.</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
               {[
@@ -65,12 +60,9 @@ export default function BenefitsPage() {
 
       {/* Comparison */}
       <RevealSection>
-        <section className="py-24 bg-[var(--bg-secondary)]">
+        <section className="py-24 border-t border-[var(--card-border)]">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <Badge variant="amber" className="mb-4">Side by Side</Badge>
-              <h2 className="text-3xl font-bold text-[var(--fg)]">With VoltKeep vs Without</h2>
-            </div>
+            <h2 className="text-3xl font-bold text-[var(--fg)] mb-10">With VoltKeep vs without</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {/* Without */}
               <Card className="p-7 border-red-200">
@@ -82,10 +74,11 @@ export default function BenefitsPage() {
                   {[
                     'Battery slowly discharges during extended parking',
                     'Driver arrives to a vehicle that will not start',
-                    'Call-out or roadside recovery is dispatched',
+                    'Call-out, boost, or roadside recovery is dispatched',
                     'Battery replaced, often ahead of its natural end of life',
+                    'Flat battery triggers ECU faults and warning lights',
+                    'Unnecessary diagnostics and component replacements',
                     'Deliveries missed, appointments rescheduled',
-                    'This repeats 0.8 times per vehicle per year on average',
                     'No advance warning before failure occurs',
                   ].map(item => (
                     <div key={item} className="flex gap-3 text-sm text-[var(--fg-muted)]">
@@ -105,13 +98,15 @@ export default function BenefitsPage() {
                 </h3>
                 <div className="space-y-3">
                   {[
-                    'Solar panel continuously offsets battery self-discharge',
+                    'Flexible solar panel continuously offsets self-discharge',
+                    'MPPT controller charges correctly for your battery type',
+                    'Overcharge protection keeps batteries healthy long-term',
                     'Battery remains at full charge regardless of parking duration',
-                    'Vehicle starts first time, every time',
+                    'Vehicle starts first time, every time — no boosting needed',
+                    'No flat battery means no ECU faults or electronic damage',
                     'Battery replacement interval extends 3–5×',
-                    'Every delivery and appointment runs as planned',
-                    'Zero reactive call-outs for battery-related failures',
-                    'Dashboard alerts you if a battery trends downward',
+                    'Optional BMS monitors SOC, SOH & voltage per vehicle via 4G',
+                    'Alerts before failure — never a surprise no-start again',
                   ].map(item => (
                     <div key={item} className="flex gap-3 text-sm text-[var(--fg-muted)]">
                       <svg className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
@@ -129,13 +124,12 @@ export default function BenefitsPage() {
 
       {/* Fleet size context */}
       <RevealSection>
-        <section className="py-24 bg-[var(--bg)]">
+        <section className="py-24 border-t border-[var(--card-border)]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <Badge variant="muted" className="mb-4">By Fleet Size</Badge>
-              <h2 className="text-3xl font-bold text-[var(--fg)]">What VoltKeep is Worth to Your Operation</h2>
-              <p className="text-[var(--fg-muted)] mt-3 max-w-xl mx-auto">
-                These figures are based on 0.8 incidents per vehicle per year at an average cost of €700 per incident, conservative industry figures.
+            <div className="mb-12">
+              <h2 className="text-3xl font-bold text-[var(--fg)] mb-3">By fleet size</h2>
+              <p className="text-[var(--fg-muted)] max-w-xl">
+                Based on 0.8 incidents per vehicle per year at an average cost of €700 per incident — conservative industry figures.
               </p>
             </div>
             <div className="overflow-x-auto">
@@ -168,7 +162,7 @@ export default function BenefitsPage() {
               </table>
             </div>
             <p className="text-center text-xs text-[var(--fg-muted)] mt-4">
-              Savings figures are gross. VoltKeep plan cost is deducted on top of hardware. <Link href="/pricing" className="text-[var(--amber-text)] hover:underline">See pricing.</Link>
+              Savings figures are gross. Contact us for a tailored quote.
             </p>
           </div>
         </section>
@@ -176,17 +170,16 @@ export default function BenefitsPage() {
 
       {/* Battery lifespan */}
       <RevealSection>
-        <section className="py-24 bg-[var(--bg-secondary)]">
+        <section className="py-24 border-t border-[var(--card-border)]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-14 items-center">
               <div>
-                <Badge variant="amber" className="mb-4">Battery Lifespan</Badge>
-                <h2 className="text-3xl font-bold text-[var(--fg)] mb-5">Replace Batteries Every 5 Years, Not Every 18 Months</h2>
+                <h2 className="text-3xl font-bold text-[var(--fg)] mb-5">Replace batteries every 5 years, not every 18 months</h2>
                 <p className="text-[var(--fg-muted)] leading-relaxed mb-6">
-                  The primary cause of premature battery failure is deep discharge. When a battery drops below 50% state of charge repeatedly, the lead plates sulphate and capacity degrades rapidly. Most fleet batteries that are replaced early are technically fine, they simply were not maintained above their safe operating threshold.
+                  The primary cause of premature battery failure is deep discharge. When a battery repeatedly drops below 50% SOC, the lead plates sulphate and capacity degrades. Most fleet batteries that are replaced early are technically fine — they just weren't kept above their safe operating threshold.
                 </p>
                 <p className="text-[var(--fg-muted)] leading-relaxed mb-6">
-                  VoltKeep keeps state of charge above 80% at all times. Batteries maintained in this range typically last 4–6 years instead of 12–18 months. For a 100-vehicle fleet replacing 80 batteries a year at €150 each, that alone is a saving of €60,000 per year before call-outs and downtime are considered.
+                  The MPPT controller holds every battery above 80% at all times. That alone extends replacement cycles from 12–18 months to 4–6 years. For a 100-vehicle fleet, that is a saving of around €60,000 per year on batteries alone.
                 </p>
                 <div className="flex gap-8">
                   <div>
@@ -218,7 +211,7 @@ export default function BenefitsPage() {
                       <span className="text-[var(--amber-text)] font-semibold">71%</span>
                     </div>
                     <div className="battery-bar-track">
-                      <div className="battery-bar-fill" style={{ width: '71%', background: '#eab308' }} />
+                      <div className="battery-bar-fill" style={{ width: '71%', background: '#ffc800' }} />
                     </div>
                     <div className="text-[10px] text-[var(--amber-text)] mt-1">Marginal. Will start today, but degrading.</div>
                   </div>
@@ -251,11 +244,10 @@ export default function BenefitsPage() {
 
       {/* Results from customers */}
       <RevealSection>
-        <section className="py-24 bg-[var(--bg)]">
+        <section className="py-24 border-t border-[var(--card-border)]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <Badge variant="muted" className="mb-4">Customer Results</Badge>
-              <h2 className="text-3xl font-bold text-[var(--fg)]">What Our Customers Actually Saved</h2>
+            <div className="mb-12">
+              <h2 className="text-3xl font-bold text-[var(--fg)]">What customers actually saved</h2>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               {CASE_STUDIES.map(cs => (
@@ -288,9 +280,9 @@ export default function BenefitsPage() {
       {/* CTA */}
       <section className="py-20 bg-[var(--navy)] text-center dark-surface">
         <div className="mx-auto max-w-3xl px-4">
-          <h2 className="text-3xl font-extrabold text-[var(--fg)] mb-4">Want the Numbers for Your Specific Fleet?</h2>
+          <h2 className="text-3xl font-extrabold text-[var(--fg)] mb-4">Want the numbers for your fleet?</h2>
           <p className="text-[var(--fg-muted)] mb-8">
-            Our Customer Success team will model your actual battery failure costs and show you what VoltKeep is worth to your operation, free, no obligation.
+            We'll model your actual battery failure costs and show you what VoltKeep is worth to your operation. Free, no obligation.
           </p>
           <Link href="/contact"><Button size="lg">Request a Custom Analysis</Button></Link>
         </div>

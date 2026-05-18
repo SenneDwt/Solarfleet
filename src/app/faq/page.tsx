@@ -22,7 +22,7 @@ function AccordionItem({ question, answer, isOpen, onToggle }: {
         aria-expanded={isOpen}
       >
         <span className="font-semibold text-[var(--fg)] pr-4">{question}</span>
-        <span className={`flex-shrink-0 w-6 h-6 rounded-full border border-[var(--card-border)] flex items-center justify-center transition-all duration-300 ${isOpen ? 'bg-yellow-600 border-yellow-600 rotate-45' : 'bg-transparent'}`}>
+        <span className={`flex-shrink-0 w-6 h-6 rounded-full border border-[var(--card-border)] flex items-center justify-center transition-all duration-300 ${isOpen ? 'bg-[var(--amber)] border-[var(--amber)] rotate-45' : 'bg-transparent'}`}>
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke={isOpen ? '#0a1628' : 'currentColor'} strokeWidth="3" strokeLinecap="round">
             <line x1="12" y1="5" x2="12" y2="19" />
             <line x1="5" y1="12" x2="19" y2="12" />
@@ -45,17 +45,16 @@ export default function FAQPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative py-24 bg-[var(--bg-secondary)] overflow-hidden text-center border-b border-[var(--card-border)]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_70%_at_50%_35%,rgba(245,158,11,0.10),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.08))]" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Badge variant="muted" className="mb-5">FAQ</Badge>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-[var(--fg)] mb-6">
-            Questions Fleet Managers Actually Ask
-          </h1>
-          <p className="text-[var(--fg-muted)] text-lg max-w-2xl mx-auto">
-            No marketing fluff. Straight answers to the objections, concerns, and technical questions we hear most from fleet operators considering VoltKeep.
-          </p>
+      <section className="py-16 border-b border-[var(--card-border)]">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-[var(--fg)] mb-4">
+              Questions we hear most.
+            </h1>
+            <p className="text-[var(--fg-muted)] text-lg">
+              Straight answers. No marketing copy.
+            </p>
+          </div>
         </div>
       </section>
 

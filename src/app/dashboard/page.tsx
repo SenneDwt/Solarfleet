@@ -20,7 +20,7 @@ const STATUS_LABELS: Record<Status, { label: string; badgeVariant: 'green' | 'am
 
 const PANEL_LABELS: Record<PanelStatus, { label: string; color: string }> = {
   active:  { label: 'Generating', color: '#22c55e' },
-  standby: { label: 'Standby',    color: '#eab308' },
+  standby: { label: 'Standby',    color: '#ffc800' },
   offline: { label: 'Offline',    color: '#ef4444' },
 };
 
@@ -61,8 +61,8 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen bg-[var(--bg)]">
       {/* Demo banner */}
-      <div className="bg-yellow-500/10 border-b border-yellow-600/20 px-4 py-2.5 text-center">
-        <p className="text-sm text-yellow-800 dark:text-yellow-300">
+      <div className="bg-[var(--amber-soft)] border-b border-[var(--amber)]/20 px-4 py-2.5 text-center">
+        <p className="text-sm text-[var(--amber-text)]">
           <strong>Fleet Dashboard Demo</strong>, simulated data updating live every 5 seconds.{' '}
           <Link href="/contact" className="underline hover:text-[var(--amber-text)]">Book a demo</Link> to connect your real fleet.
         </p>
@@ -102,11 +102,11 @@ export default function DashboardPage() {
             <button
               key={s}
               onClick={() => setFilter(filter === s ? 'all' : s)}
-              className={`p-4 rounded-xl border text-left transition-all ${filter === s ? 'border-yellow-500 shadow-md bg-[var(--card-bg)]' : 'border-[var(--card-border)] bg-[var(--card-bg)] hover:border-yellow-400'}`}
+              className={`p-4 rounded-xl border text-left transition-all ${filter === s ? 'border-[var(--amber)] shadow-md bg-[var(--card-bg)]' : 'border-[var(--card-border)] bg-[var(--card-bg)] hover:border-[var(--amber-hover)]'}`}
             >
               <div className="flex items-center gap-2 mb-1">
                 <span className="w-2 h-2 rounded-full"
-                  style={{ background: s === 'good' ? '#22c55e' : s === 'warning' ? '#eab308' : '#ef4444' }} />
+                  style={{ background: s === 'good' ? '#22c55e' : s === 'warning' ? '#ffc800' : '#ef4444' }} />
                 <span className="text-xs text-[var(--fg-muted)] capitalize">{STATUS_LABELS[s].label}</span>
               </div>
               <div className="text-2xl font-extrabold text-[var(--fg)] stat-value">{counts[s]}</div>
@@ -163,7 +163,7 @@ export default function DashboardPage() {
                 {filtered.map(v => {
                   const sc = STATUS_LABELS[v.status as Status];
                   const pc = PANEL_LABELS[v.panelStatus as PanelStatus];
-                  const voltColor = v.batteryVoltage >= 12.4 ? '#22c55e' : v.batteryVoltage >= 12.0 ? '#eab308' : '#ef4444';
+                  const voltColor = v.batteryVoltage >= 12.4 ? '#22c55e' : v.batteryVoltage >= 12.0 ? '#ffc800' : '#ef4444';
                   return (
                     <tr key={v.id}>
                       <td className="pl-6">
@@ -211,7 +211,7 @@ export default function DashboardPage() {
             <div className="flex gap-1 items-end h-10">
               {Array.from({ length: 30 }, (_, i) => (
                 <div key={i} className="flex-1 rounded-sm"
-                  style={{ height: `${60 + Math.random() * 40}%`, background: i > 26 ? '#eab308' : '#22c55e', opacity: 0.7 + Math.random() * 0.3 }} />
+                  style={{ height: `${60 + Math.random() * 40}%`, background: i > 26 ? '#ffc800' : '#22c55e', opacity: 0.7 + Math.random() * 0.3 }} />
               ))}
             </div>
             <div className="flex justify-between text-[10px] text-[var(--fg-muted)] mt-1">

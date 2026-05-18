@@ -31,20 +31,17 @@ export default function AboutPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative py-28 bg-[var(--bg-secondary)] overflow-hidden border-b border-[var(--card-border)]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_30%_70%,rgba(245,158,11,0.10),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.08))]" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="py-24 border-b border-[var(--card-border)]">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <Badge variant="amber" className="mb-5">Our Story</Badge>
             <h1 className="text-4xl sm:text-5xl font-extrabold text-[var(--fg)] mb-8 leading-tight">
-              Started by a Fleet Manager.<br />Built for Fleet Managers.
+              Started by a fleet manager.<br />Built for fleet managers.
             </h1>
-            <p className="text-[var(--fg-muted)] text-xl leading-relaxed mb-6">
-              VoltKeep didn&apos;t begin in a Silicon Valley garage or a university lab. It started in an Antwerp depot on a −12°C January morning, when the third van of the day refused to start.
+            <p className="text-[var(--fg-muted)] text-xl leading-relaxed mb-5">
+              Not a Silicon Valley garage. An Antwerp depot at −12°C, when the third van of the day refused to start.
             </p>
             <p className="text-[var(--fg-muted)] text-lg leading-relaxed">
-              Matthias Brenner, then Head of Fleet Operations at a 500-van logistics company, called his friend Dr. Sarah Okafor, a solar engineer at Tesla Energy. &ldquo;There has to be a permanent solution to this,&rdquo; he said. Three years later, there is. And it&apos;s protecting over 10,000 vehicles across Europe.
+              Matthias Brenner called his friend Dr. Sarah Okafor — a solar engineer — and said there had to be a permanent solution. Three years later, there is. Over 10,000 vehicles across Europe.
             </p>
           </div>
         </div>
@@ -68,11 +65,11 @@ export default function AboutPage() {
               <div>
                 <h3 className="text-xs font-semibold uppercase tracking-widest text-[var(--fg-muted)] mb-6">Our Journey</h3>
                 <div className="relative">
-                  <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-yellow-600/50 via-yellow-500/30 to-transparent" />
+                  <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[var(--amber)]/50 via-[var(--amber)]/30 to-transparent" />
                   <div className="space-y-6 pl-10">
                     {MILESTONES.map(m => (
                       <div key={m.year} className="relative">
-                        <div className="absolute -left-[30px] top-1 w-3.5 h-3.5 rounded-full bg-yellow-600 border-2 border-[var(--bg)]" />
+                        <div className="absolute -left-[30px] top-1 w-3.5 h-3.5 rounded-full bg-[var(--amber)] border-2 border-[var(--bg)]" />
                         <div className="text-xs font-bold text-[var(--amber-text)] mb-1">{m.year}</div>
                         <div className="text-sm text-[var(--fg-muted)]">{m.event}</div>
                       </div>
@@ -188,7 +185,7 @@ export default function AboutPage() {
                     { value: 'IP67', label: 'Weatherproof' },
                   ].map(cert => (
                     <div key={cert.value} className="rounded-lg bg-[var(--bg)] border border-[var(--card-border)] p-3">
-                      <div className="font-bold text-yellow-600">{cert.value}</div>
+                      <div className="font-bold text-[var(--amber)]">{cert.value}</div>
                       <div className="text-xs text-[var(--fg-muted)] mt-0.5">{cert.label}</div>
                     </div>
                   ))}

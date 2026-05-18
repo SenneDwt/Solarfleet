@@ -5,7 +5,6 @@ const links = {
     { label: 'VS-120 Panel', href: '/product' },
     { label: 'How It Works', href: '/how-it-works' },
     { label: 'Fleet Dashboard', href: '/dashboard' },
-    { label: 'Pricing', href: '/pricing' },
   ],
   Company: [
     { label: 'About Us', href: '/about' },
@@ -27,13 +26,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2.5 mb-4" aria-label="VoltKeep home">
-              <div className="w-8 h-8 rounded-lg bg-yellow-600 flex items-center justify-center shadow-lg shadow-yellow-500/30">
+              <div className="w-8 h-8 rounded-lg bg-[var(--amber)] flex items-center justify-center shadow-lg shadow-[var(--amber-shadow)]">
                 <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
                   <path d="M13 3L4 14h7l-1 7 9-11h-7l1-7z" fill="#0a1628" />
                 </svg>
               </div>
               <span className="text-lg font-bold text-[var(--fg)]">
-                Volt<span className="text-yellow-500">Keep</span>
+                Volt<span className="text-[var(--amber)]">Keep</span>
               </span>
             </Link>
             <p className="text-sm text-[var(--fg-muted)] leading-relaxed max-w-xs mb-6">
@@ -41,9 +40,9 @@ export default function Footer() {
             </p>
             <p className="text-xs text-[var(--fg-muted)]">
               Industrielaan 42, 2000 Antwerp, Belgium<br />
-              <a href="tel:+3232001234" className="hover:text-yellow-500 transition-colors">+32 3 200 12 34</a>
+              <a href="tel:+3232001234" className="hover:text-[var(--amber)] transition-colors">+32 3 200 12 34</a>
               {' · '}
-              <a href="mailto:fleet@voltkeep.eu" className="hover:text-yellow-500 transition-colors">fleet@voltkeep.eu</a>
+              <a href="mailto:fleet@voltkeep.eu" className="hover:text-[var(--amber)] transition-colors">fleet@voltkeep.eu</a>
             </p>
             {/* Certifications */}
             <div className="flex gap-2 mt-5 flex-wrap">
@@ -66,7 +65,7 @@ export default function Footer() {
                   <li key={item.label}>
                     <Link
                       href={item.href}
-                      className="text-sm text-[var(--fg-muted)] hover:text-yellow-500 transition-colors"
+                      className="text-sm text-[var(--fg-muted)] hover:text-[var(--amber)] transition-colors"
                     >
                       {item.label}
                     </Link>
@@ -82,9 +81,9 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--fg-muted)]">
           <p>© {new Date().getFullYear()} VoltKeep BV. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link href="#" className="hover:text-yellow-500 transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-yellow-500 transition-colors">Terms of Service</Link>
-            <Link href="#" className="hover:text-yellow-500 transition-colors">Cookie Settings</Link>
+            <Link href="#" className="hover:text-[var(--amber)] transition-colors">Privacy Policy</Link>
+            <Link href="#" className="hover:text-[var(--amber)] transition-colors">Terms of Service</Link>
+            <Link href="#" className="hover:text-[var(--amber)] transition-colors">Cookie Settings</Link>
           </div>
         </div>
       </div>

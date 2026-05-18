@@ -24,7 +24,7 @@ export default function BatteryIndicator({
   }, [animated, percentage]);
 
   const color =
-    displayPct >= 80 ? '#22c55e' : displayPct >= 50 ? '#f59e0b' : displayPct >= 20 ? '#f97316' : '#ef4444';
+    displayPct >= 80 ? '#22c55e' : displayPct >= 50 ? '#ffc800' : displayPct >= 20 ? '#f97316' : '#ef4444';
 
   const sizes = {
     sm: { w: 40, h: 20, nubW: 4, nubH: 8, r: 3, fontSize: 8 },
