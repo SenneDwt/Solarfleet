@@ -5,10 +5,10 @@ import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
 import RevealSection from '@/components/ui/RevealSection';
 import FeatureIcon from '@/components/ui/FeatureIcon';
-import { FEATURES, CASE_STUDIES } from '@/lib/constants';
+import { FEATURES } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'VoltKeep — Fleet Batteries That Never Go Flat',
+  title: 'VoltKeep: Fleet Batteries That Never Go Flat',
   description:
     'Flexible solar panel, smart MPPT charger, optional BMS monitoring. Keep every fleet battery fully charged while the vehicle is parked.',
 };
@@ -18,19 +18,24 @@ export default function HomePage() {
     <div>
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative min-h-[calc(100vh-64px)] flex items-center overflow-hidden border-b border-[var(--card-border)]">
-        <div className="absolute inset-0 bg-gradient-to-br from-[var(--amber-light)]/50 via-white to-white" />
+        <div className="absolute inset-0 bg-[var(--bg)]" />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(ellipse 65% 70% at 5% 60%, rgba(255,200,0,0.14) 0%, transparent 55%), radial-gradient(ellipse 50% 55% at 95% 10%, rgba(255,200,0,0.07) 0%, transparent 50%)',
+          }}
+        />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 w-full">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             <div>
-              <h1 className="text-5xl sm:text-6xl lg:text-[4rem] xl:text-[4.75rem] font-extrabold leading-[1.08] tracking-tight text-[var(--fg)] mb-7">
-                Your fleet.<br />
-                Dead batteries.<br />
-                <span className="text-[var(--amber)]">Not anymore.</span>
+              <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] font-extrabold leading-[1.12] tracking-tight text-[var(--fg)] mb-7">
+                Fleet batteries that <span className="text-[var(--amber)]">start every time.</span>
               </h1>
 
               <p className="text-lg text-[var(--fg-muted)] leading-relaxed mb-8 max-w-lg">
-                A flexible solar panel on the roof. A smart MPPT charger that works with every battery type. Add the optional BMS module and monitor your entire fleet via 4G. Zero flat batteries.
+                A flexible solar panel on the roof feeds a trickle charge to the battery while the vehicle sits. A smart MPPT charger handles any battery type. Add the optional BMS module and you can monitor your entire fleet via 4G.
               </p>
 
               <div className="flex flex-wrap gap-3 mb-10">
@@ -51,7 +56,6 @@ export default function HomePage() {
                 {[
                   { n: '3–5×', label: 'Longer battery lifespan' },
                   { n: 'IP67', label: 'Fully sealed' },
-                  { n: '0', label: 'Battery failures at monitored fleets' },
                 ].map(s => (
                   <div key={s.label}>
                     <div className="text-2xl font-extrabold text-[var(--navy)] stat-value">{s.n}</div>
@@ -62,7 +66,7 @@ export default function HomePage() {
             </div>
 
             <div className="flex justify-center lg:justify-end">
-              <div className="w-full max-w-[400px] animate-float">
+              <div className="w-full max-w-[440px]">
                 <SolarCharger />
               </div>
             </div>
@@ -76,10 +80,10 @@ export default function HomePage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-14">
               <h2 className="text-3xl sm:text-4xl font-bold text-[var(--fg)] mb-4">
-                Every fleet has this problem.<br />Most just absorb the cost.
+                The problem most fleet managers budget for instead of fixing.
               </h2>
               <p className="text-[var(--fg-muted)] max-w-xl text-lg">
-                Vehicles sit in the depot. Batteries self-discharge. Monday morning: vans that won't start, drivers waiting, deliveries missed.
+                Vehicles sit in the depot over the weekend. Batteries slowly lose charge. Monday morning a driver arrives to a van that won't start, and the day falls apart from there.
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
@@ -113,7 +117,7 @@ export default function HomePage() {
 
       {/* ── Solution overview ────────────────────────────────── */}
       <RevealSection>
-        <section className="py-24 border-t border-[var(--card-border)]">
+        <section className="py-24 bg-[var(--bg-secondary)] border-y border-[var(--card-border)]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
@@ -121,14 +125,14 @@ export default function HomePage() {
                   Panel on the roof. Battery never goes flat.
                 </h2>
                 <p className="text-[var(--fg-muted)] leading-relaxed mb-8">
-                  The flexible solar panel feeds a trickle into the battery while the vehicle sits. The MPPT controller handles the chemistry — lead-acid, AGM, gel, EFB, lithium. No overcharging. Battery held at 100%, however long the vehicle is parked.
+                  The flexible solar panel feeds a trickle into the battery while the vehicle sits. The MPPT controller handles the chemistry: lead-acid, AGM, gel, EFB, lithium. No overcharging. Battery held at 100%, however long the vehicle is parked.
                 </p>
                 <div className="space-y-4">
                   {[
                     { title: 'Vehicle is parked', desc: 'Engine off. Battery slowly loses charge through self-discharge and parasitic loads.' },
-                    { title: 'Panel generates power', desc: 'Daylight — even winter overcast — hits the panel and produces current.' },
+                    { title: 'Panel generates power', desc: 'Daylight, even winter overcast, hits the panel and produces current.' },
                     { title: 'MPPT charges correctly', desc: 'Right profile for your battery type. No overcharging. Battery stays at 100%.' },
-                    { title: 'Driver turns the key', desc: 'Starts first time. No boost, no call-out, no ECU faults from a dead battery.' },
+                    { title: 'Driver turns the key', desc: 'The battery is at 100%. The van starts. No boost needed, no fault codes, no lost morning.' },
                   ].map((step, i) => (
                     <div key={step.title} className="flex gap-4 items-start">
                       <div className="w-7 h-7 rounded-full bg-[var(--navy)] flex items-center justify-center text-[var(--amber)] text-xs font-bold flex-shrink-0 mt-0.5">
@@ -154,8 +158,8 @@ export default function HomePage() {
                     ['Solar panel', 'Flexible & foldable, multiple wattages'],
                     ['Charge controller', 'MPPT, all battery types'],
                     ['Battery compatibility', 'Lead-acid, AGM, gel, EFB, lithium'],
-                    ['Overcharge protection', 'Built in — automatic float mode'],
-                    ['Weather rating', 'IP67 — panel & controller'],
+                    ['Overcharge protection', 'Built in, automatic float mode'],
+                    ['Weather rating', 'IP67, panel & controller'],
                     ['Optional BMS', 'SOC, SOH & voltage monitoring'],
                     ['Connectivity', 'Built-in 4G SIM (BMS option)'],
                     ['Monitoring scale', '1 to unlimited vehicles'],
@@ -175,7 +179,7 @@ export default function HomePage() {
 
       {/* ── Features ─────────────────────────────────────────── */}
       <RevealSection>
-        <section className="py-24 bg-[var(--bg-secondary)] border-y border-[var(--card-border)]">
+        <section className="py-24 bg-[var(--bg)]">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
               <h2 className="text-3xl sm:text-4xl font-bold text-[var(--fg)] mb-3">
@@ -188,7 +192,7 @@ export default function HomePage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {FEATURES.map((feature) => (
                 <Card key={feature.title} className="p-5 group" hover>
-                  <div className="w-9 h-9 rounded-lg bg-[var(--amber-soft)] border border-[var(--amber)]/20 flex items-center justify-center mb-4 group-hover:bg-[var(--amber-soft-20)] transition-colors">
+                  <div className="w-9 h-9 rounded-xl bg-[var(--amber-soft)] border border-[var(--amber)]/20 flex items-center justify-center mb-4 group-hover:bg-[var(--amber-soft-20)] transition-colors">
                     <FeatureIcon name={feature.iconName} size={18} className="text-[var(--amber-text)]" />
                   </div>
                   <h3 className="font-bold text-[var(--fg)] mb-2 text-sm leading-snug">{feature.title}</h3>
@@ -200,58 +204,11 @@ export default function HomePage() {
         </section>
       </RevealSection>
 
-      {/* ── Case study teasers ────────────────────────────────── */}
-      <RevealSection>
-        <section className="py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold text-[var(--fg)]">
-                Results from the field.
-              </h2>
-              <p className="text-[var(--fg-muted)] mt-3 max-w-lg">Real numbers from live deployments. No projections.</p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              {CASE_STUDIES.map(cs => (
-                <Card key={cs.id} className="p-7 flex flex-col" hover>
-                  <div className="flex items-center gap-3 mb-5">
-                    <div className="w-10 h-10 rounded-lg bg-[var(--amber-soft)] border border-[var(--amber)]/25 flex items-center justify-center text-[var(--amber-text)] font-bold text-sm">
-                      {cs.logo}
-                    </div>
-                    <div>
-                      <div className="font-bold text-sm text-[var(--fg)]">{cs.company}</div>
-                      <div className="text-xs text-[var(--fg-muted)]">{cs.industry}</div>
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-3 mb-5">
-                    <div className="rounded-lg border border-[var(--card-border)] p-3 text-center">
-                      <div className="text-xl font-extrabold text-[var(--amber-text)] stat-value">€{(cs.annualSaving / 1000).toFixed(0)}K</div>
-                      <div className="text-[10px] text-[var(--fg-muted)] mt-0.5">Saved per year</div>
-                    </div>
-                    <div className="rounded-lg border border-[var(--card-border)] p-3 text-center">
-                      <div className="text-xl font-extrabold text-green-600 stat-value">{cs.roiMonths} mo</div>
-                      <div className="text-[10px] text-[var(--fg-muted)] mt-0.5">ROI timeline</div>
-                    </div>
-                  </div>
-                  <blockquote className="text-sm text-[var(--fg-muted)] italic leading-relaxed flex-1 mb-4">
-                    &ldquo;{cs.quote}&rdquo;
-                  </blockquote>
-                  <div className="text-xs text-[var(--fg-muted)]">
-                    {cs.quotee}, {cs.quoteeRole}
-                  </div>
-                </Card>
-              ))}
-            </div>
-            <div className="mt-10">
-              <Link href="/case-studies">
-                <Button variant="outline">Read Full Case Studies</Button>
-              </Link>
-            </div>
-          </div>
-        </section>
-      </RevealSection>
-
       {/* ── CTA ──────────────────────────────────────────────── */}
-      <section className="py-24 bg-[var(--navy)] dark-surface">
+      <section
+        className="py-24 dark-surface"
+        style={{ background: 'linear-gradient(135deg, var(--navy) 0%, #1a3a6b 100%)' }}
+      >
         <div className="mx-auto max-w-4xl px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[var(--fg)] mb-5 leading-tight">
             Your next dead battery<br />should be your <span className="text-[var(--amber)]">last one.</span>
@@ -264,7 +221,7 @@ export default function HomePage() {
               <Button size="lg">Book a Free Fleet Audit</Button>
             </Link>
           </div>
-          <p className="text-xs text-[var(--fg-muted)] mt-5 opacity-60">No commitment required.</p>
+          <p className="text-xs text-[var(--fg-muted)] mt-5 opacity-60">30 minutes. We audit your fleet and show you what changes.</p>
         </div>
       </section>
     </div>

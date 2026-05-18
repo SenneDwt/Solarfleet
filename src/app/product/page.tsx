@@ -68,10 +68,10 @@ export default function ProductPage() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Badge variant="amber" className="mb-5">VoltKeep VS-120</Badge>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-[var(--fg)] mb-6 max-w-3xl">
-            Engineered for Fleets.<br />Not Adapted from Residential Solar.
+            Built for commercial vehicles, not garden sheds.
           </h1>
           <p className="text-[var(--fg-muted)] text-lg max-w-2xl mb-8 leading-relaxed">
-            The VS-120 is the only solar panel designed from the ground up for commercial vehicle deployment, aerodynamic, ruggedised, intelligent, and connected. Every millimetre counts when it lives on your fleet.
+            The VS-120 was designed from scratch for fleet conditions: low profile, ruggedised, compatible with every battery type, and optionally connected via 4G.
           </p>
           <div className="flex flex-wrap gap-3">
             <Link href="/contact"><Button size="lg">Request a Pilot Install</Button></Link>
@@ -86,7 +86,7 @@ export default function ProductPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-14">
               <Badge variant="muted" className="mb-4">Full Specifications</Badge>
-              <h2 className="text-3xl font-bold text-[var(--fg)]">Every Number That Matters</h2>
+              <h2 className="text-3xl font-bold text-[var(--fg)]">Full Specifications</h2>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
               {SPECS.map(section => (
@@ -204,7 +204,7 @@ export default function ProductPage() {
             Start with a pilot of 15–30 vehicles. We&apos;ll install, monitor, and deliver a full performance report after one quarter.
           </p>
           <Link href="/contact">
-            <button className="bg-[var(--navy)] text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-[var(--navy-light)] transition-colors">
+            <button className="bg-[var(--navy)] text-white px-8 py-3.5 rounded-full font-semibold hover:bg-[var(--navy-light)] transition-all hover:-translate-y-0.5 shadow-lg">
               Request a Pilot Programme
             </button>
           </Link>

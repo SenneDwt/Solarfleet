@@ -31,14 +31,14 @@ export default function Navbar() {
         className={cn(
           'fixed top-0 inset-x-0 z-50 transition-all duration-300',
           scrolled
-            ? 'py-2 bg-[var(--bg)]/95 backdrop-blur-xl border-b border-[var(--card-border)] shadow-sm'
+            ? 'py-3 bg-white/90 backdrop-blur-2xl border-b border-[var(--card-border)] shadow-[var(--shadow-sm)]'
             : 'py-4 bg-transparent'
         )}
       >
         <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group" aria-label="VoltKeep home">
-            <div className="w-8 h-8 rounded-lg bg-[var(--amber)] flex items-center justify-center shadow-md shadow-[var(--amber-shadow)] group-hover:bg-[var(--amber-hover)] transition-colors">
+          <Link href="/" className="flex items-center gap-2.5 group" aria-label="VoltKeep home">
+            <div className="w-8 h-8 rounded-xl bg-[var(--amber)] flex items-center justify-center shadow-[0_2px_8px_rgba(255,200,0,0.35)] group-hover:bg-[var(--amber-hover)] transition-colors">
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none">
                 <path d="M13 3L4 14h7l-1 7 9-11h-7l1-7z" fill="white" />
               </svg>
@@ -55,16 +55,13 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   className={cn(
-                    'relative px-3 py-2 text-sm font-medium rounded-md transition-colors',
+                    'relative px-3.5 py-2 text-sm font-medium rounded-full transition-colors',
                     pathname === link.href
-                      ? 'text-[var(--amber)]'
-                      : 'text-[var(--fg-muted)] hover:text-[var(--fg)]'
+                      ? 'text-[var(--fg)] bg-[var(--surface)]'
+                      : 'text-[var(--fg-muted)] hover:text-[var(--fg)] hover:bg-[var(--surface)]'
                   )}
                 >
                   {link.label}
-                  {pathname === link.href && (
-                    <span className="absolute inset-x-3 bottom-0.5 h-0.5 bg-[var(--amber)] rounded-full" />
-                  )}
                 </Link>
               </li>
             ))}
@@ -72,17 +69,13 @@ export default function Navbar() {
 
           {/* Right side */}
           <div className="flex items-center gap-2">
-            <Link href="/contact" className="hidden lg:inline-flex text-sm font-medium text-[var(--fg-muted)] hover:text-[var(--fg)] transition-colors px-2">
-              Contact
-            </Link>
-
             <Link href="/contact">
               <Button size="sm">Book a Demo</Button>
             </Link>
 
             <button
               onClick={() => setMobileOpen(v => !v)}
-              className="lg:hidden w-9 h-9 rounded-lg flex items-center justify-center text-[var(--fg-muted)] hover:text-[var(--fg)] hover:bg-[var(--surface)] transition-all"
+              className="lg:hidden w-9 h-9 rounded-xl flex items-center justify-center text-[var(--fg-muted)] hover:text-[var(--fg)] hover:bg-[var(--surface)] transition-all"
               aria-label="Toggle menu"
               aria-expanded={mobileOpen}
             >
@@ -108,7 +101,7 @@ export default function Navbar() {
       {/* Mobile drawer */}
       <div
         className={cn(
-          'fixed top-0 right-0 z-50 h-full w-72 max-w-[90vw] bg-[var(--bg)] border-l border-[var(--card-border)] shadow-2xl lg:hidden',
+          'fixed top-0 right-0 z-50 h-full w-72 max-w-[90vw] bg-[var(--card-bg)] border-l border-[var(--card-border)] shadow-[var(--shadow-xl)] lg:hidden',
           'transition-transform duration-300',
           mobileOpen ? 'translate-x-0' : 'translate-x-full'
         )}
@@ -127,7 +120,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               className={cn(
-                'px-4 py-3 rounded-lg text-sm font-medium transition-colors',
+                'px-4 py-3 rounded-xl text-sm font-medium transition-colors',
                 pathname === link.href
                   ? 'bg-[var(--amber-soft)] text-[var(--amber-text)]'
                   : 'text-[var(--fg-muted)] hover:text-[var(--fg)] hover:bg-[var(--surface)]'

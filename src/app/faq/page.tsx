@@ -52,7 +52,7 @@ export default function FAQPage() {
               Questions we hear most.
             </h1>
             <p className="text-[var(--fg-muted)] text-lg">
-              Straight answers. No marketing copy.
+              Plain answers to the questions we hear most.
             </p>
           </div>
         </div>
@@ -95,7 +95,7 @@ export default function FAQPage() {
       </RevealSection>
 
       {/* CTA */}
-      <section className="py-20 bg-[var(--navy)] text-center dark-surface">
+      <section className="py-20 text-center dark-surface" style={{ background: 'linear-gradient(135deg, var(--navy) 0%, #1a3a6b 100%)' }}>
         <div className="mx-auto max-w-3xl px-4">
           <h2 className="text-3xl font-extrabold text-[var(--fg)] mb-4">Ready to Stop Answering Questions and Start Eliminating Failures?</h2>
           <p className="text-[var(--fg-muted)] mb-8">

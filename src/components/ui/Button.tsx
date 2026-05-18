@@ -14,17 +14,17 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ variant = 'primary', size = 'md', loading, className, children, disabled, ...props }, ref) => {
     const base =
-      'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 select-none disabled:opacity-50 disabled:pointer-events-none';
+      'inline-flex items-center justify-center font-semibold rounded-full transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 select-none disabled:opacity-50 disabled:pointer-events-none';
 
     const variants = {
       primary:
-        'bg-[var(--amber)] text-[var(--navy)] hover:bg-[var(--amber-hover)] active:bg-[var(--amber-active)] focus-visible:ring-[var(--amber)] shadow-lg shadow-[var(--amber-shadow)] hover:shadow-[var(--amber-shadow)] hover:-translate-y-0.5',
+        'bg-[var(--amber)] text-[var(--navy)] hover:bg-[var(--amber-hover)] active:bg-[var(--amber-active)] focus-visible:ring-[var(--amber)] shadow-[0_2px_10px_rgba(255,200,0,0.35)] hover:shadow-[0_4px_18px_rgba(255,200,0,0.45)] hover:-translate-y-0.5',
       secondary:
-        'bg-[var(--surface)] text-[var(--fg)] hover:bg-[var(--bg-secondary)] active:bg-[var(--surface)] border border-[var(--card-border)] focus-visible:ring-[var(--amber)]',
+        'bg-[var(--card-bg)] text-[var(--fg)] hover:bg-[var(--bg-secondary)] active:bg-[var(--surface)] border border-[var(--card-border)] shadow-[var(--shadow-xs)] focus-visible:ring-[var(--amber)]',
       ghost:
         'text-[var(--amber)] hover:opacity-90 hover:bg-[var(--amber-soft)] active:bg-[var(--amber-soft-20)] focus-visible:ring-[var(--amber)]',
       outline:
-        'border border-[var(--amber-border)] text-[var(--amber)] hover:opacity-90 hover:bg-[var(--amber-soft)] focus-visible:ring-[var(--amber)]',
+        'border border-[var(--amber-border)] text-[var(--amber-text)] hover:bg-[var(--amber-soft)] focus-visible:ring-[var(--amber)]',
     };
 
     const sizes = {

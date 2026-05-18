@@ -5,7 +5,10 @@
       "Bash(npm install *)",
       "Bash(npm run *)",
       "Bash(curl -s http://localhost:3000)",
-      "Bash(xargs grep *)"
+      "Bash(xargs grep *)",
+      "Bash(npx next *)",
+      "Bash(Remove-Item *)",
+      "Bash(npx tsc *)"
     ]
   }
 }

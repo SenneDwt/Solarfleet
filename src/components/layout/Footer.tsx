@@ -20,7 +20,7 @@ const links = {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[var(--card-border)] bg-[var(--navy-950,#030c18)] dark-surface">
+    <footer className="border-t border-[var(--card-border)] dark-surface" style={{ background: 'linear-gradient(180deg, #0d1e38 0%, #0a1628 100%)' }}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand */}

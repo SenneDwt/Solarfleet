@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
 import RevealSection from '@/components/ui/RevealSection';
-import { CASE_STUDIES } from '@/lib/constants';
 
 export default function BenefitsPage() {
   return (
@@ -102,11 +101,11 @@ export default function BenefitsPage() {
                     'MPPT controller charges correctly for your battery type',
                     'Overcharge protection keeps batteries healthy long-term',
                     'Battery remains at full charge regardless of parking duration',
-                    'Vehicle starts first time, every time — no boosting needed',
+                    'Vehicle starts first time, every time,no boosting needed',
                     'No flat battery means no ECU faults or electronic damage',
                     'Battery replacement interval extends 3–5×',
                     'Optional BMS monitors SOC, SOH & voltage per vehicle via 4G',
-                    'Alerts before failure — never a surprise no-start again',
+                    'Alerts before failure,never a surprise no-start again',
                   ].map(item => (
                     <div key={item} className="flex gap-3 text-sm text-[var(--fg-muted)]">
                       <svg className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
@@ -129,7 +128,7 @@ export default function BenefitsPage() {
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-[var(--fg)] mb-3">By fleet size</h2>
               <p className="text-[var(--fg-muted)] max-w-xl">
-                Based on 0.8 incidents per vehicle per year at an average cost of €700 per incident — conservative industry figures.
+                Based on 0.8 incidents per vehicle per year at an average cost of €700 per incident,conservative industry figures.
               </p>
             </div>
             <div className="overflow-x-auto">
@@ -176,7 +175,7 @@ export default function BenefitsPage() {
               <div>
                 <h2 className="text-3xl font-bold text-[var(--fg)] mb-5">Replace batteries every 5 years, not every 18 months</h2>
                 <p className="text-[var(--fg-muted)] leading-relaxed mb-6">
-                  The primary cause of premature battery failure is deep discharge. When a battery repeatedly drops below 50% SOC, the lead plates sulphate and capacity degrades. Most fleet batteries that are replaced early are technically fine — they just weren't kept above their safe operating threshold.
+                  The primary cause of premature battery failure is deep discharge. When a battery repeatedly drops below 50% SOC, the lead plates sulphate and capacity degrades. Most fleet batteries that are replaced early are technically fine,they just weren't kept above their safe operating threshold.
                 </p>
                 <p className="text-[var(--fg-muted)] leading-relaxed mb-6">
                   The MPPT controller holds every battery above 80% at all times. That alone extends replacement cycles from 12–18 months to 4–6 years. For a 100-vehicle fleet, that is a saving of around €60,000 per year on batteries alone.
@@ -242,43 +241,8 @@ export default function BenefitsPage() {
         </section>
       </RevealSection>
 
-      {/* Results from customers */}
-      <RevealSection>
-        <section className="py-24 border-t border-[var(--card-border)]">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-12">
-              <h2 className="text-3xl font-bold text-[var(--fg)]">What customers actually saved</h2>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6">
-              {CASE_STUDIES.map(cs => (
-                <Card key={cs.id} className="p-6">
-                  <div className="font-bold text-[var(--fg)] mb-1">{cs.company}</div>
-                  <div className="text-xs text-[var(--fg-muted)] mb-4">{cs.fleetSize} vehicles · {cs.industry}</div>
-                  <div className="text-3xl font-extrabold text-[var(--amber-text)] stat-value mb-1">€{(cs.annualSaving / 1000).toFixed(0)}K</div>
-                  <div className="text-sm text-[var(--fg-muted)] mb-4">saved per year</div>
-                  {cs.results.slice(0, 2).map(r => (
-                    <div key={r.metric} className="text-xs text-[var(--fg-muted)] flex gap-2 mb-1">
-                      <svg className="w-3.5 h-3.5 text-green-500 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                        <path d="M20 6L9 17l-5-5" />
-                      </svg>
-                      {r.metric}: {r.before} → <span className="text-green-600 font-semibold">{r.after}</span>
-                    </div>
-                  ))}
-                  <div className="mt-4 pt-4 border-t border-[var(--card-border)]">
-                    <div className="text-xs text-[var(--fg-muted)]">ROI achieved in <strong className="text-[var(--fg)]">{cs.roiMonths} months</strong></div>
-                  </div>
-                </Card>
-              ))}
-            </div>
-            <div className="text-center mt-8">
-              <Link href="/case-studies"><Button variant="outline">Full Case Studies</Button></Link>
-            </div>
-          </div>
-        </section>
-      </RevealSection>
-
       {/* CTA */}
-      <section className="py-20 bg-[var(--navy)] text-center dark-surface">
+      <section className="py-20 text-center dark-surface" style={{ background: 'linear-gradient(135deg, var(--navy) 0%, #1a3a6b 100%)' }}>
         <div className="mx-auto max-w-3xl px-4">
           <h2 className="text-3xl font-extrabold text-[var(--fg)] mb-4">Want the numbers for your fleet?</h2>
           <p className="text-[var(--fg-muted)] mb-8">

@@ -6,45 +6,67 @@ import Badge from '@/components/ui/Badge';
 import RevealSection from '@/components/ui/RevealSection';
 
 export const metadata: Metadata = {
-  title: 'How It Works — VoltKeep',
+  title: 'How It Works: VoltKeep',
   description: 'Flexible solar panel, smart MPPT controller for all battery types, optional BMS monitoring. How VoltKeep keeps fleet batteries from going flat.',
 };
 
 const STEPS = [
   {
     n: '01',
-    title: 'The vehicle is parked',
-    subtitle: 'This is when the problem starts',
-    body: 'Parked with the engine off, the battery slowly self-discharges. Modern vehicles draw continuous current from alarms, central locking, and ECUs — even with the ignition off. In cold weather it accelerates. After one to two weeks, many batteries drop below starting voltage. A critically flat battery doesn\'t just cause a no-start: it can wipe ECU memory and trigger fault codes that send vehicles to the workshop unnecessarily.',
-    fact: '12V batteries lose 5–10% charge per month at room temperature. In winter, that doubles.',
+    title: 'Vehicle parks. Battery starts draining.',
+    stat: '5–10%',
+    statLabel: 'charge lost per month',
+    desc: 'Even with the engine off, alarms, ECUs and central locking draw current. After a week or two, many batteries drop below starting voltage.',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="1" y="3" width="15" height="13" rx="2" />
+        <path d="M16 8h4l3 3v5h-7V8z" />
+        <circle cx="5.5" cy="18.5" r="2.5" /><circle cx="18.5" cy="18.5" r="2.5" />
+      </svg>
+    ),
   },
   {
     n: '02',
-    title: 'The flexible panel generates a trickle',
-    subtitle: 'Daylight, not direct sunlight',
-    body: 'The VoltKeep panel converts daylight into DC current. Available in multiple wattages, it folds flat for transport and attaches to any roof without drill holes. Under full cloud cover in a Belgian winter it still produces several times more power than the battery loses through self-discharge. It doesn\'t need to generate a lot — it just needs to generate more than the battery is losing.',
-    fact: 'A parked van draws roughly 0.3–1W in standby. The panel comfortably exceeds this in all but complete darkness.',
+    title: 'Panel converts daylight to current.',
+    stat: 'IP67',
+    statLabel: 'rain, snow, pressure wash',
+    desc: 'The flexible panel sits on the roof and generates power from daylight, not direct sun. Works through Belgian winters.',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" />
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+        <line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" />
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+      </svg>
+    ),
   },
   {
     n: '03',
-    title: 'The MPPT controller charges correctly for your battery',
-    subtitle: 'Every chemistry, no overcharging',
-    body: 'The MPPT controller extracts maximum power from the panel and applies the correct charging profile for your battery chemistry — lead-acid, AGM, gel, EFB, or lithium. No manual configuration. It bulk charges when needed, holds at float when full, and never overcharges. The battery stays healthy and lasts significantly longer.',
-    fact: 'One controller, any battery type. Built-in overcharge protection extends battery life from 12–18 months to 4–6 years.',
+    title: 'MPPT controller charges the right way.',
+    stat: '5 types',
+    statLabel: 'lead-acid, AGM, gel, EFB, lithium',
+    desc: 'The controller picks the correct profile for your battery chemistry automatically. Bulk charges when needed, floats when full, never overcharges.',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="7" width="16" height="11" rx="2" /><path d="M22 11v3" />
+        <path d="M7 11v3" strokeWidth="2.5" />
+        <path d="M11 11v3" strokeWidth="2.5" />
+      </svg>
+    ),
   },
   {
     n: '04',
-    title: 'Battery stays at 100% — no boosts, no breakdowns',
-    subtitle: 'The vehicle starts, every time',
-    body: 'The battery never drops below starting threshold. No call-outs, no roadside recovery, no driver waiting in a cold depot. Because it never goes flat, the vehicle\'s electronics stay stable — no lost ECU memory, no fault codes, no unnecessary workshop visits. The vehicle starts. The delivery runs.',
-    fact: 'Batteries held above 80% SOC last 4–6 years. Deep-discharged batteries last 12–18 months — and cost far more than their own replacement price.',
-  },
-  {
-    n: '05',
-    title: 'Optional: BMS module monitors every battery in real time',
-    subtitle: '1 vehicle or your entire fleet',
-    body: 'Add the optional BMS module and it measures SOC, SOH, and voltage at set intervals — transmitting data to your fleet dashboard via a built-in 4G SIM. No gateway, no local network, no setup beyond clipping it to the battery. Scale from a single vehicle to an unlimited fleet. Alerts fire the moment a battery stops charging or starts degrading.',
-    fact: 'Each BMS unit operates independently via its own 4G connection. One platform, any fleet size.',
+    title: 'Battery stays full. Driver just starts it.',
+    stat: '3–5×',
+    statLabel: 'longer battery lifespan',
+    desc: 'The battery never drops below starting threshold. The driver gets in and goes. No recovery calls, no fault codes, no lost morning.',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+        <polyline points="22 4 12 14.01 9 11.01" />
+      </svg>
+    ),
   },
 ];
 
@@ -54,169 +76,163 @@ export default function HowItWorksPage() {
       {/* Hero */}
       <section className="py-20 border-b border-[var(--card-border)]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-[var(--fg)] mb-6 leading-tight">
-              Three components.<br />One system.
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-[var(--fg)] mb-5 leading-tight">
+              How it works
             </h1>
-            <p className="text-[var(--fg-muted)] text-lg leading-relaxed">
-              Two components are always included. One is optional. Together they keep every battery fully charged and give you complete visibility over every vehicle.
+            <p className="text-[var(--fg-muted)] text-lg">
+              Solar panel on the roof. Smart controller in between. Battery never goes flat.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <Card className="p-7 flex flex-col gap-5">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-[var(--fg-muted)] tracking-widest uppercase">01</span>
-                <Badge variant="amber">Included</Badge>
-              </div>
-              <div>
-                <h2 className="font-bold text-[var(--fg)] text-base mb-2">Flexible Solar Panel</h2>
-                <p className="text-sm text-[var(--fg-muted)] leading-relaxed">
-                  Available in multiple wattages. Folds flat, attaches to any vehicle roof without drill holes. Works from daylight — even in overcast winter conditions.
-                </p>
-              </div>
-              <div className="mt-auto flex flex-wrap gap-1.5">
-                {['Multiple wattages', 'Foldable', 'IP67'].map(tag => (
-                  <span key={tag} className="text-[10px] font-medium text-[var(--fg-muted)] px-2 py-0.5 rounded-full border border-[var(--card-border)]">{tag}</span>
-                ))}
-              </div>
-            </Card>
-
-            <Card className="p-7 flex flex-col gap-5">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-[var(--fg-muted)] tracking-widest uppercase">02</span>
-                <Badge variant="amber">Included</Badge>
-              </div>
-              <div>
-                <h2 className="font-bold text-[var(--fg)] text-base mb-2">MPPT Charge Controller</h2>
-                <p className="text-sm text-[var(--fg-muted)] leading-relaxed">
-                  Adapts automatically to your battery chemistry — lead-acid, AGM, gel, EFB, or lithium. Charges correctly, prevents overcharging, extends lifespan 3–5×.
-                </p>
-              </div>
-              <div className="mt-auto flex flex-wrap gap-1.5">
-                {['All battery types', 'No overcharge', 'IP67'].map(tag => (
-                  <span key={tag} className="text-[10px] font-medium text-[var(--fg-muted)] px-2 py-0.5 rounded-full border border-[var(--card-border)]">{tag}</span>
-                ))}
-              </div>
-            </Card>
-
-            <Card className="p-7 flex flex-col gap-5 border-dashed">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-[var(--fg-muted)] tracking-widest uppercase">03</span>
-                <Badge variant="muted">Optional</Badge>
-              </div>
-              <div>
-                <h2 className="font-bold text-[var(--fg)] text-base mb-2">BMS Monitoring Module</h2>
-                <p className="text-sm text-[var(--fg-muted)] leading-relaxed">
-                  Measures SOC, SOH, and voltage at set intervals. Sends data via built-in 4G SIM to your fleet platform. 1 vehicle to unlimited — no infrastructure needed.
-                </p>
-              </div>
-              <div className="mt-auto flex flex-wrap gap-1.5">
-                {['SOC & SOH', '4G SIM built-in', '1 to unlimited'].map(tag => (
-                  <span key={tag} className="text-[10px] font-medium text-[var(--fg-muted)] px-2 py-0.5 rounded-full border border-[var(--card-border)]">{tag}</span>
-                ))}
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Steps */}
-      <section className="py-24">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="space-y-6">
-            {STEPS.map((step, i) => (
-              <RevealSection key={step.n}>
-                <div className="grid grid-cols-[56px_1fr] gap-5 items-start">
-                  <div className="flex flex-col items-center gap-2">
-                    <div className="w-12 h-12 rounded-xl bg-[var(--amber-soft)] border border-[var(--amber)]/25 flex items-center justify-center text-[var(--amber-text)] text-sm font-bold flex-shrink-0">
-                      {step.n}
-                    </div>
-                    {i < STEPS.length - 1 && (
-                      <div className="w-px flex-1 min-h-[24px] bg-gradient-to-b from-[var(--amber)]/20 to-transparent" />
-                    )}
-                  </div>
-                  <Card className="p-6">
-                    <h3 className="text-lg font-bold text-[var(--fg)] mb-1">{step.title}</h3>
-                    <p className="text-xs text-[var(--fg-muted)] font-medium mb-4 uppercase tracking-wide">{step.subtitle}</p>
-                    <p className="text-sm text-[var(--fg-muted)] leading-relaxed mb-4">{step.body}</p>
-                    <div className="bg-[var(--amber-soft)] border border-[var(--amber-border)] rounded-lg px-4 py-3">
-                      <p className="text-xs text-[var(--amber-text)] leading-relaxed">{step.fact}</p>
-                    </div>
-                  </Card>
+          {/* Component cards */}
+          <div className="grid md:grid-cols-3 gap-5 max-w-4xl mx-auto">
+            {[
+              {
+                n: '01', label: 'Included', variant: 'amber' as const,
+                title: 'Flexible Solar Panel',
+                desc: 'Mounts without drill holes. Works from diffuse daylight.',
+                tags: ['Multiple wattages', 'Foldable', 'IP67'],
+                dashed: false,
+              },
+              {
+                n: '02', label: 'Included', variant: 'amber' as const,
+                title: 'MPPT Charge Controller',
+                desc: 'Correct profile for every battery type. Overcharge protection built in.',
+                tags: ['All battery types', 'Float mode', 'IP67'],
+                dashed: false,
+              },
+              {
+                n: '03', label: 'Optional', variant: 'muted' as const,
+                title: 'BMS Monitoring Module',
+                desc: 'SOC, SOH & voltage per vehicle, sent via 4G. No setup.',
+                tags: ['4G SIM built-in', 'Real-time alerts', 'Any fleet size'],
+                dashed: true,
+              },
+            ].map(c => (
+              <Card key={c.n} className={`p-6 flex flex-col gap-4 ${c.dashed ? 'border-dashed' : ''}`}>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold text-[var(--fg-muted)] tracking-widest">{c.n}</span>
+                  <Badge variant={c.variant}>{c.label}</Badge>
                 </div>
-              </RevealSection>
+                <div>
+                  <h2 className="font-bold text-[var(--fg)] mb-1.5">{c.title}</h2>
+                  <p className="text-sm text-[var(--fg-muted)] leading-relaxed">{c.desc}</p>
+                </div>
+                <div className="mt-auto flex flex-wrap gap-1.5">
+                  {c.tags.map(tag => (
+                    <span key={tag} className="text-[10px] font-medium text-[var(--fg-muted)] px-2 py-0.5 rounded-full border border-[var(--card-border)]">{tag}</span>
+                  ))}
+                </div>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Weather performance */}
+      {/* Visual steps */}
       <RevealSection>
-        <section className="py-24 border-t border-[var(--card-border)]">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <section className="py-24 bg-[var(--bg-secondary)] border-y border-[var(--card-border)]">
+          <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-14">
+              <h2 className="text-3xl font-bold text-[var(--fg)]">What happens, step by step</h2>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-5">
+              {STEPS.map((step) => (
+                <div key={step.n} className="rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] shadow-[var(--shadow-sm)] p-6 flex gap-5 items-start">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[var(--amber-soft)] border border-[var(--amber)]/20 flex items-center justify-center text-[var(--amber-text)]">
+                    {step.icon}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-start justify-between gap-3 mb-2">
+                      <h3 className="font-bold text-[var(--fg)] text-sm leading-snug">{step.title}</h3>
+                      <span className="text-xs text-[var(--fg-muted)] font-medium opacity-40 flex-shrink-0">{step.n}</span>
+                    </div>
+                    <p className="text-sm text-[var(--fg-muted)] leading-relaxed mb-3">{step.desc}</p>
+                    <div className="flex items-baseline gap-1.5">
+                      <span className="text-xl font-extrabold text-[var(--amber-text)]">{step.stat}</span>
+                      <span className="text-xs text-[var(--fg-muted)]">{step.statLabel}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* BMS add-on */}
+            <div className="mt-5 rounded-2xl border border-dashed border-[var(--card-border)] shadow-[var(--shadow-sm)] p-6 flex flex-col sm:flex-row gap-5 items-start bg-[var(--card-bg)]">
+              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-[var(--amber-soft)] border border-[var(--amber)]/20 flex items-center justify-center text-[var(--amber-text)]">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" />
+                  <path d="M7 8h.01M12 8h.01M17 8h.01" strokeWidth="2.5" />
+                </svg>
+              </div>
               <div>
-                <h2 className="text-3xl font-bold text-[var(--fg)] mb-5">
-                  Designed for Belgian winters.
-                </h2>
-                <p className="text-[var(--fg-muted)] leading-relaxed mb-4">
-                  Most solar products quote peak output at Standard Test Conditions — full sun, 25°C. VoltKeep is sized for northern European conditions: short winter days, persistent cloud cover, temperatures close to zero.
+                <div className="flex items-center gap-2 mb-1">
+                  <h3 className="font-bold text-[var(--fg)]">Optional: BMS monitoring</h3>
+                  <Badge variant="muted">Add-on</Badge>
+                </div>
+                <p className="text-sm text-[var(--fg-muted)] leading-relaxed">
+                  Clip a BMS unit to the battery and it starts reporting SOC, SOH and voltage to your fleet dashboard via built-in 4G. Works on 1 vehicle or 1,000. No gateway, no local network, no configuration.
                 </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </RevealSection>
+
+      {/* Weather visual */}
+      <RevealSection>
+        <section className="py-24 bg-[var(--bg-secondary)] border-b border-[var(--card-border)]">
+          <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl font-bold text-[var(--fg)] mb-4">Works through Belgian winters.</h2>
                 <p className="text-[var(--fg-muted)] leading-relaxed mb-8">
-                  The panel produces meaningful power from diffuse daylight, not direct sunlight. Overcast output is still several times more than the battery loses through self-discharge each day. Both panel and controller are IP67 sealed — rain, snow, and depot pressure washing included.
+                  The panel generates from diffuse daylight, not direct sun. Even in January it produces enough to offset daily self-discharge. Both components are IP67, built for rain, snow and depot pressure washing.
                 </p>
                 <div className="space-y-2">
                   {[
-                    { condition: 'Full sun', result: 'Rapidly restores any deficit', ok: true },
-                    { condition: 'Partial cloud', result: 'Easily maintains full charge', ok: true },
-                    { condition: 'Full overcast', result: 'Still offsets self-discharge', ok: true },
-                    { condition: 'Heavy rain', result: 'Slows discharge significantly', ok: true },
-                    { condition: 'Night', result: 'Battery holds overnight without issue', ok: true },
-                    { condition: 'Snow cover on panel', result: 'Resumes when snow clears (typically hours)', ok: null },
+                    { condition: 'Full sun', ok: true },
+                    { condition: 'Partial cloud', ok: true },
+                    { condition: 'Full overcast', ok: true },
+                    { condition: 'Heavy rain', ok: true },
+                    { condition: 'Night', ok: true },
+                    { condition: 'Snow on panel', ok: null },
                   ].map(row => (
-                    <div key={row.condition} className="flex items-center justify-between p-3 rounded-lg border border-[var(--card-border)]">
+                    <div key={row.condition} className="flex items-center justify-between px-4 py-2.5 rounded-lg bg-[var(--card-bg)] border border-[var(--card-border)]">
                       <span className="text-sm font-medium text-[var(--fg)]">{row.condition}</span>
-                      <div className="flex items-center gap-3">
-                        <span className="text-xs text-[var(--fg-muted)] hidden sm:block">{row.result}</span>
-                        {row.ok === true && <Badge variant="green">Maintained</Badge>}
-                        {row.ok === null && <Badge variant="muted">Temporary</Badge>}
-                      </div>
+                      {row.ok === true && <Badge variant="green">Maintained</Badge>}
+                      {row.ok === null && <Badge variant="muted">Temporary</Badge>}
                     </div>
                   ))}
                 </div>
               </div>
-              <Card className="p-7">
-                <h3 className="font-bold text-[var(--fg)] mb-5">Solar availability by month — Antwerp</h3>
-                <div className="space-y-3">
+
+              <Card className="p-6">
+                <h3 className="font-semibold text-[var(--fg)] mb-5 text-sm">Solar output by month (Antwerp)</h3>
+                <div className="space-y-2.5">
                   {[
-                    { month: 'Jan', pct: 18, note: 'Low, but sufficient' },
-                    { month: 'Feb', pct: 28, note: '' },
-                    { month: 'Mar', pct: 45, note: '' },
-                    { month: 'Apr', pct: 65, note: '' },
-                    { month: 'May', pct: 82, note: '' },
-                    { month: 'Jun', pct: 90, note: '' },
-                    { month: 'Jul', pct: 92, note: '' },
-                    { month: 'Aug', pct: 85, note: '' },
-                    { month: 'Sep', pct: 67, note: '' },
-                    { month: 'Oct', pct: 42, note: '' },
-                    { month: 'Nov', pct: 22, note: '' },
-                    { month: 'Dec', pct: 14, note: 'Low, but sufficient' },
-                  ].map(({ month, pct, note }) => (
+                    { month: 'Jan', pct: 18 }, { month: 'Feb', pct: 28 },
+                    { month: 'Mar', pct: 45 }, { month: 'Apr', pct: 65 },
+                    { month: 'May', pct: 82 }, { month: 'Jun', pct: 90 },
+                    { month: 'Jul', pct: 92 }, { month: 'Aug', pct: 85 },
+                    { month: 'Sep', pct: 67 }, { month: 'Oct', pct: 42 },
+                    { month: 'Nov', pct: 22 }, { month: 'Dec', pct: 14 },
+                  ].map(({ month, pct }) => (
                     <div key={month} className="flex items-center gap-3">
-                      <div className="w-8 text-xs text-[var(--fg-muted)] text-right">{month}</div>
-                      <div className="flex-1 battery-bar-track">
-                        <div className="battery-bar-fill" style={{
+                      <div className="w-7 text-xs text-[var(--fg-muted)] text-right shrink-0">{month}</div>
+                      <div className="flex-1 h-2 rounded-full bg-[var(--card-border)]">
+                        <div className="h-2 rounded-full transition-all" style={{
                           width: `${pct}%`,
                           background: pct >= 50 ? '#22c55e' : pct >= 25 ? '#ffc800' : '#f97316',
                         }} />
                       </div>
-                      <div className="text-xs font-semibold text-[var(--fg)] w-8 text-right">{pct}%</div>
-                      {note && <div className="text-[10px] text-[var(--fg-muted)] w-24">{note}</div>}
+                      <div className="text-xs font-semibold text-[var(--fg)] w-8 text-right shrink-0">{pct}%</div>
                     </div>
                   ))}
                 </div>
-                <p className="text-[10px] text-[var(--fg-muted)] mt-4">% of peak summer output. Battery is maintained across all 12 months.</p>
+                <p className="text-[10px] text-[var(--fg-muted)] mt-4">Battery stays maintained across all 12 months.</p>
               </Card>
             </div>
           </div>
@@ -224,11 +240,14 @@ export default function HowItWorksPage() {
       </RevealSection>
 
       {/* CTA */}
-      <section className="py-20 bg-[var(--navy)] text-center dark-surface">
+      <section
+        className="py-20 text-center dark-surface"
+        style={{ background: 'linear-gradient(135deg, var(--navy) 0%, #1a3a6b 100%)' }}
+      >
         <div className="mx-auto max-w-3xl px-4">
           <h2 className="text-3xl font-extrabold text-[var(--fg)] mb-4">See it on a vehicle from your fleet.</h2>
-          <p className="text-[var(--fg-muted)] mb-8">30 minutes. We cover the panel, the controller, the BMS, and real data from a live deployment.</p>
-          <Link href="/contact"><Button size="lg">Book a Technical Demo</Button></Link>
+          <p className="text-[var(--fg-muted)] mb-8">30 minutes. Panel, controller, BMS and what it means for your operation.</p>
+          <Link href="/contact"><Button size="lg">Book a Demo</Button></Link>
         </div>
       </section>
     </div>

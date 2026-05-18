@@ -2,27 +2,34 @@
 
 /* ─── Design Tokens — Light (default) ─────────────────────── */
 :root {
-  --bg: #ffffff;
-  --bg-secondary: #f7f8fc;
-  --fg: #111827;
-  --fg-muted: #6b7280;
+  --bg: #fafafa;
+  --bg-secondary: #f1f3f9;
+  --fg: #0f172a;
+  --fg-muted: #64748b;
   --card-bg: #ffffff;
-  --card-border: rgba(0, 0, 0, 0.07);
-  --surface: rgba(0, 0, 0, 0.03);
+  --card-border: rgba(0, 0, 0, 0.08);
+  --surface: rgba(0, 0, 0, 0.04);
   --input-bg: #ffffff;
-  --input-border: rgba(0, 0, 0, 0.14);
+  --input-border: rgba(0, 0, 0, 0.12);
+
+  /* Depth */
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 20px -3px rgba(0, 0, 0, 0.09), 0 4px 6px -4px rgba(0, 0, 0, 0.06);
+  --shadow-xl: 0 20px 40px -5px rgba(0, 0, 0, 0.11), 0 8px 16px -6px rgba(0, 0, 0, 0.07);
 
   --navy: #0a1628;
   --navy-light: #162e52;
-  /* Accent (yellow) */
+  /* Accent */
   --amber: #ffc800;
   --amber-hover: #ffd23a;
   --amber-active: #e6b400;
   --amber-soft: rgba(255, 200, 0, 0.10);
   --amber-soft-20: rgba(255, 200, 0, 0.20);
   --amber-border: rgba(255, 200, 0, 0.55);
-  --amber-shadow: rgba(255, 200, 0, 0.22);
-  --amber-light: #fff4b3;
+  --amber-shadow: rgba(255, 200, 0, 0.28);
+  --amber-light: #fff7cc;
   /* Amber text — dark on light bg, bright on dark bg */
   --amber-text: #92400e;
 }
@@ -38,10 +45,12 @@ body {
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
+h1, h2, h3 { letter-spacing: -0.025em; }
+
 /* ─── Dark surface helper (for dark sections in light theme) ─── */
 .dark-surface {
   --fg: #f8fafc;
-  --fg-muted: rgba(248, 250, 252, 0.68);
+  --fg-muted: rgba(248, 250, 252, 0.65);
   --card-border: rgba(248, 250, 252, 0.12);
   --surface: rgba(248, 250, 252, 0.06);
   --input-border: rgba(248, 250, 252, 0.18);
